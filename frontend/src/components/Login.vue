@@ -76,16 +76,14 @@ section {
 .contenedor .form-check{
     display: flex;
     justify-content: space-between;
-    background-color: aquamarine;
+    
     padding: 0;
 }
 
-.contenedor .form-check label{
-    background-color: blueviolet;
-}
+
 
 .contenedor .form-check input{
-    background-color: blue;
+    
     max-width: 1rem;
 }
 
