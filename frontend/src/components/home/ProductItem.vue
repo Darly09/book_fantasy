@@ -1,6 +1,6 @@
 <template>
   <div class="libro">
-    <img class="imagen" src="../../img/books/el_principito.jpg" alt="Nombre del libro">
+    <img class="imagen" src="../../assets/img/books/el_principito.jpg" alt="Nombre del libro">
     <h5>El principito</h5>
     </div>
 </template>

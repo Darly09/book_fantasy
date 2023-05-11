@@ -2,13 +2,13 @@
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../img/slide/carrusel1.webp" class="d-block w-100" alt="Somos todos">
+                <img src="../../assets/img/slide/carrusel1.webp" class="d-block w-100" alt="Somos todos">
             </div>
             <div class="carousel-item">
-                <img src="../img/slide/carrusel2.webp" class="d-block w-100" alt="Novedades">
+                <img src="../../assets/img/slide/carrusel2.webp" class="d-block w-100" alt="Novedades">
             </div>
             <div class="carousel-item">
-                <img src="../img/slide/carrusel3.png" class="d-block w-100" alt="Autor del mes">
+                <img src="../../assets/img/slide/carrusel3.png" class="d-block w-100" alt="Autor del mes">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
