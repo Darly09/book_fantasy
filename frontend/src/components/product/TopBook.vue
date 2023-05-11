@@ -1,9 +1,6 @@
 <template>
     <div>
-       <h4>NOVEDADES</h4> 
-    </div>
-    <div>
-        
+       <h6>MÁS VENDIDOS</h6> 
     </div>
 </template>
 
@@ -12,5 +9,4 @@
         margin: 1rem 1rem;
         text-align: center;
     }
-
 </style>

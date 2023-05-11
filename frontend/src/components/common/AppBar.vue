@@ -4,13 +4,13 @@ import FieldSeach from './FieldSeach.vue';
 
 <template>
     <div>
-        <img src="../../img/logo.jpg" alt="Logo" width="300">
+        <img src="../../assets/img/logo.jpg" alt="Logo" width="300">
         <FieldSeach/>
         <p><strong>+57 3053136807</strong></p>
         <div class="iconos">
-            <img src="../../img/icons/whatsapp.png" alt="wsp" width="50">
-            <img src="../../img/icons/administrador.png" alt="usuario" width="50">
-            <img src="../../img/icons/carrito-de-compras.png" alt="carrito de compras" width="50">
+            <img src="../../assets/img/icons/whatsapp.png" alt="wsp" width="35">
+            <img src="../../assets/img/icons/administrador.png" alt="usuario" width="35">
+            <img src="../../assets/img/icons/carrito-de-compras.png" alt="carrito de compras" width="35">
 
         </div>
     </div>
