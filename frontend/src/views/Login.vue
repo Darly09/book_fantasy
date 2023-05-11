@@ -5,16 +5,16 @@
         </div>
 
         <form class="contenedor">
-            <img class="imagen_perfil" src="../img/usuario.png">
+            
 
             <div class="cabecera_correo">
-                <img src="../img/email.png">
+               
                 <label for="FormEmail" class="form-label">Correo </label>
             </div>
             <input type="email" class="form-control" placeholder="Ingrese su correo" id="FormEmail">
 
             <div class="cabecera_contraseña">
-                <img src="../img/key.png">
+        
                 <label for="Formpassword" class="form-label">Contraseña</label>
             </div>
             <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="Formpassword">

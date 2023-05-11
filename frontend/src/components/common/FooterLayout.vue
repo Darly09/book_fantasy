@@ -32,7 +32,7 @@
         </div>
         
         <div>
-            <img class="logo_footer" src="../img/logol.png" >
+            <img class="logo_footer" src="../../assets/img/logo.jpg" >
         </div>
     </div>
 </footer>
