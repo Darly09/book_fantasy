@@ -8,6 +8,7 @@ const router = express.Router();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//Trabajando con una base de datos feid
 const sequelize = new Sequelize("empresax", "root", "", {
     host: "localhost",
     dialect: "mysql",
