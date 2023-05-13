@@ -1,6 +1,7 @@
 const express  = require('express')
-const { Sequelize, DataTypes } = require("sequelize");
+const { DataTypes} = require("sequelize");
 const bodyParser = require("body-parser");
+const {sequelize } = require('./config')
 const PORT= 8000
 const app = express ()
 const router = express.Router();
@@ -8,11 +9,7 @@ const router = express.Router();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//Trabajando con una base de datos feid
-const sequelize = new Sequelize("empresax", "root", "", {
-    host: "localhost",
-    dialect: "mysql",
-  });
+
   
   sequelize
     .authenticate()
