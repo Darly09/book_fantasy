@@ -4,13 +4,11 @@ import FieldSeach from './FieldSeach.vue';
 
 <template>
     <div>
-        <img src="../../assets/img/logo.jpg" alt="Logo" width="300">
-        <FieldSeach/>
-        <p><strong>+57 3053136807</strong></p>
+        <img class="logo" src="../../assets/img/logo.svg" alt="Logo" width="300">
+        <FieldSeach />
         <div class="iconos">
-            <img src="../../assets/img/icons/whatsapp.png" alt="wsp" width="35">
-            <img src="../../assets/img/icons/administrador.png" alt="usuario" width="35">
-            <img src="../../assets/img/icons/carrito-de-compras.png" alt="carrito de compras" width="35">
+            <img src="../../assets/img/icons/usuario.svg" alt="usuario" width="35">
+            <img src="../../assets/img/icons/carrito_compras.svg" alt="carrito de compras" width="35">
 
         </div>
     </div>
@@ -21,17 +19,29 @@ div {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(247, 247, 247);
-    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 1.5rem 2rem;
     flex-wrap: wrap;
 }
 
-@media only screen and (min-width: 1200px) {
-   .iconos img{
-    margin-left: 1rem;
-    margin-right: 1rem;
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    width: 174px;
+    height: 28px;
+    left: 96px;
+    top: 61px;
+}
 
-   }
+@media only screen and (min-width: 1200px) {
+    .iconos img {
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+    }
 }
 
 input {
