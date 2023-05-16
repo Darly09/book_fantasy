@@ -1,28 +1,24 @@
 <template>
-    <section>        
-        <div>
-            <input class="form-control" id="encabezado" type="text" placeholder="Book Fantasy" disabled>
+    <section>
+        <div class="container-form">
+            <div class="img-form">
+            </div>
         </div>
 
-        <form class="contenedor">
-            <img class="imagen_perfil" src="../img/inicio.png">
-            <div class="cabecera_correo">
-                <img src="../img/email.png">
-                <label for="FormEmail" class="form-label">Correo </label>
+        <form class="form">
+            <div class="text-form">
+                <h2>¡Bienvenido!</h2>
+                <p>Para ingresar, completa los campos </p>
             </div>
-            <input type="email" class="form-control" placeholder="Ingrese su correo" id="FormEmail">
 
-            <div class="cabecera_contraseña">
-                <img src="../img/password.png">
-                <label for="Formpassword" class="form-label">Contraseña</label>
+            <div class="input">
+                <label for="user">Email</label>
+                <input placeholder="Ingresa tu nombre" type="text" id="usuario">
             </div>
-            <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="Formpassword">
 
-            <div class="form-check">
-                <label>
-                    ¿Acepta terminos y condiciones?
-                </label>
-                <input  type="checkbox" value="">
+            <div class="input">
+                <label for="password">Contraseña</label>
+                <input placeholder="Ingresa tu contraseña" type="password" id="contraseña">
             </div>
 
             <button type="button" class="button">Ingresar</button>
@@ -30,72 +26,73 @@
     </section>
 </template>
 
+<script>
+
+</script>
+
+
 <style scoped>
-section {
-    background-image: url('../img/fondoo.jpg');
+section{
+    
+    display: flex;
+    align-items: center;
+    height: 90vh; 
+    position: fixed; top: 0; left: 0;
+}
+.img-form{
+    flex: 0 0 calc(50%);
+    margin: calc(65% + 25px);
+    background-image: url('./img/Login.png');
+    border-radius: 5%;
     background-size: cover;
-    background-position: center;
-    padding-top: 10px;
-    height: 60rem;
+    margin-top: 27rem;
+    position: absolute;
+    width: 398px;
+    height: 395px;
 }
 
-.contenedor {
+@media(min-width:768px){
+    .container-form{
     display: flex;
-    flex-direction: column;
-    background-color: rgb(207, 207, 207);
-    max-width: max-content;
-    padding: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 1rem;
+    }
 }
-
-.contenedor .imagen_perfil {
-    align-self: center;
-    max-width: 12rem;
-    background-color: white;
-    border-radius: 50%;
-}
-
-.contenedor .cabecera_correo {
-    padding-left: 0.5rem;
-}
-
-.contenedor .cabecera_correo img {
-    max-width: 2rem;
-
-}
-
-.contenedor .cabecera_contraseña {
-    padding-left: 0.5rem;
-}
-
-.contenedor .cabecera_contraseña img {
-    max-width: 2rem;
-}
-.contenedor .form-check{
-    display: flex;
-    justify-content: space-between;
+.form{
+    padding: 30rem;
+    background-color:#ffffff;
     
-    padding: 0;
 }
-
-
-
-.contenedor .form-check input{
-    
-    max-width: 1rem;
+.text-form h2{
+    font-size: 40px;
+    text-align: center;
+    font-size: 30px;
 }
-
-input {
-    width: 20rem;
-
+.text-form p{
+    font-size: 20px;
+    text-align: center;
 }
-
-.button {
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.3rem 2rem;
+.input label{
+   display: block;
+    font-size: 20px;
 }
-
-</style> 
+.input input{
+    background-color: #F5F7F9;
+    margin-bottom: 10px;
+    width: 15rem;
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+.button{
+   background-color: #D75C37;
+    border: 1px solid transparent;
+    width: 16rem;
+    padding: 10px;
+    border-radius: 10px; 
+}
+.button:active {
+    transform: translateY(4px);
+}
+.button:hover {
+    background-color: #e46444a6;
+}
+</style>
