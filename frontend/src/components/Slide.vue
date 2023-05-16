@@ -23,3 +23,14 @@
         </button>
     </div>
 </template>
+
+<style scoped>
+#carouselExampleAutoplaying{
+    margin: 0 2rem;   
+}
+
+.carousel-inner{
+    border-radius: 27px; 
+}
+
+</style>
