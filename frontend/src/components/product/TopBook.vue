@@ -1,6 +1,6 @@
 <template>
     <div>
-       <h6>MÁS VENDIDOS</h6> 
+       <h6>Lo más vendidos</h6> 
     </div>
 </template>
 

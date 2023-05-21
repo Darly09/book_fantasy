@@ -53,7 +53,7 @@ footer .informacion {
     flex-direction: row;
     justify-content: space-between;
     margin: 2rem 2rem auto 2rem;
-    padding: 5rem 3rem;
+    padding: 3.5rem 3rem 2rem 3rem;
     color: white;
 }
 
