@@ -1,10 +1,10 @@
 <script setup>
 import AppBar from '../components/common/AppBar.vue';
-import Products from '../components/product/products.vue';
+import Products from '../components/product/Products.vue';
 import Slide from '../components/Slide.vue';
 import FooterC from '../components/common/FooterC.vue';
 import NavBar from '../components/common/NavBar.vue';
-import TopBook from '../components/product/TopBook.vue'
+import Top from '../components/product/Top.vue'
 </script>
 <template>
   <AppBar />
@@ -12,7 +12,7 @@ import TopBook from '../components/product/TopBook.vue'
   <Slide />
   <div class="contenedor_libros">
     <Products class="libros" />
-    <TopBook />
+    <Top class="top" titulo="Los más vendidos"/>
   </div>
   <FooterC />
 </template>
@@ -27,6 +27,11 @@ import TopBook from '../components/product/TopBook.vue'
   display: flex;
   flex-wrap: wrap;
   flex: 0 0 70%;
+}
+
+.top{
+  display: flex;
+  flex: 0 0 25%;
 }
 </style>
 

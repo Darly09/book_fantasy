@@ -1,8 +1,3 @@
-<script setup>
-//Son propiedades para el componente
-defineProps(['img', 'titulo', 'autor', 'precio'])
-</script>
-
 <template>
   <div class="libro">
     <img class="imagen" :src="img" alt="Nombre del libro">
@@ -20,6 +15,11 @@ defineProps(['img', 'titulo', 'autor', 'precio'])
     </div>
   </div>
 </template>
+
+<script setup>
+//Son propiedades para el componente
+defineProps(['img', 'titulo', 'autor', 'precio'])
+</script>
 
 <style scoped>
 .libro {
