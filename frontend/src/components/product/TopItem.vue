@@ -19,8 +19,11 @@ defineProps(['img', 'titulo', 'autor'])
 }
 
 img {
-    height: 16rem;
+    width: 8rem;
+    height: 14rem;
     border-radius: 1rem;
+    object-fit: cover;
+
 }
 
 .info_item{
@@ -46,5 +49,6 @@ h6 {
     background-color: #79AC8B;
     height: 0.1rem;
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 </style>

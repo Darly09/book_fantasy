@@ -33,7 +33,7 @@
 <style scoped>
 #carrusel{
     margin: 0 2rem;
-    height: 25rem; 
+    height: 20rem; 
 }
 
 .carousel-inner{

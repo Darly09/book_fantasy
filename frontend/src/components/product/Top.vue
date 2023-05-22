@@ -5,15 +5,18 @@
             <img src="../../assets/img/icons/regresar.svg" alt="regresar">
         </div>
         <div class="tops">
-            <TopItem img="../../../src/assets/img/books/resplandor.webp" titulo="El resplandor" autor="Stephen Kingl" />
+            <TopItem v-for="top in tops" :img="top.img" :titulo="top.titulo" :autor="top.autor" />
         </div>
     </section>
 </template>
 
 <script setup>
+import TopItem from './TopItem.vue';
+import TopsItem from '../../models/Tops';
+import { ref } from 'vue';
 //Son propiedades para el componente
 defineProps(['titulo'])
-import TopItem from './TopItem.vue';
+const tops = ref(TopsItem)
 </script>
 
 <style scoped>

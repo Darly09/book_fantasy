@@ -20,13 +20,14 @@ import Top from '../components/product/Top.vue'
 .contenedor_libros {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  align-items: flex-start;
 }
 
 .libros {
   display: flex;
   flex-wrap: wrap;
   flex: 0 0 70%;
+  flex-grow: 1;
 }
 
 .top{
