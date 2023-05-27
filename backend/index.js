@@ -1,105 +1,110 @@
-const express  = require('express')
-const { Sequelize, DataTypes } = require("sequelize");
+const express = require('express')
+const {Sequelize, DataTypes} = require("sequelize");
 const bodyParser = require("body-parser");
-const PORT= 8000
-const app = express ()
+const ProveedorTienda = require("./models/ProveedorTienda")
+const PORT = 8000
+const app = express()
 const router = express.Router();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-const sequelize = new Sequelize("empresax", "root", "", {
+const sequelize = new Sequelize("colegio", "root", "", {
     host: "localhost",
     dialect: "mysql",
-  });
-  
-  sequelize
+});
+
+sequelize
     .authenticate()
     .then(() => {
-      console.log("CONEXION A LA BASE DE DATOS EXITOSA!");
+        console.log("CONEXION A LA BASE DE DATOS EXITOSA!");
     })
     .catch((error) => {
-      console.error("EL ERROR DE CONEXION ES: " + error);
+        console.error("EL ERROR DE CONEXION ES: " + error);
     });
-  
-    const personal = sequelize.define("personal", {
-      id: {
+
+const personal = sequelize.define("estudiante", {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-      },
-      email: {
+    },
+    email: {
         type: DataTypes.STRING,
-      },
-      password: {
+    },
+    password: {
         type: DataTypes.STRING,
-      },
-    });
-    
-    sequelize.sync();
+    },
+    username: {
+        type: DataTypes.STRING,
+    },
+});
+const proveedorTienda = sequelize.define("proveedor_tienda", ProveedorTienda)
 
-    router.get("/empleados", async (req, res) => {
-        res.send(
-          await personal.findAll({
+sequelize.sync();
+
+router.get("/empleados", async (req, res) => {
+    res.send(
+        await personal.findAll({
             where: {
-              email: usuario.email,
-              password: usuario.password,
+                email: usuario.email,
+                password: usuario.password,
             },
-          })
-        );
-      });
-      
-      async function validacion(email, password) {
-        const expReg =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.) +[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-        const esValido = expReg.test(email);
-      
-        if (password === "" || password === undefined || password === null) {
-          return {
+        })
+    );
+});
+
+async function validacion(email, password) {
+    const expReg = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.) +[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    const esValido = expReg.test(email);
+
+    if (password === "" || password === undefined || password === null) {
+        return {
             code: 400,
             message:
-              "Te falto la contraseña, comprueba que lo escribiste e intenta nuevamente",
-          };
-        } else if (email === "" || email === undefined || email === null) {
-          return {
+                "Te falto la contraseña, comprueba que lo escribiste e intenta nuevamente",
+        };
+    } else if (email === "" || email === undefined || email === null) {
+        return {
             code: 400,
             message:
-              "Te falto el correo, comprueba que lo escribiste e intenta nuevamente",
-          };
-        } else if (esValido == false) {
-          return {
+                "Te falto el correo, comprueba que lo escribiste e intenta nuevamente",
+        };
+    } else if (esValido == false) {
+        return {
             code: 400,
             message:
-              "¡UPS!, no has ingresado un correo electrónico valido, intentalo de nuevo",
-          };
-        }
-      
-        const user = await personal.findAll({
-          where: {
+                "¡UPS!, no has ingresado un correo electrónico valido, intentalo de nuevo",
+        };
+    }
+
+    const user = await personal.findAll({
+        where: {
             email: email,
             password: password,
-          },
-        });
-        if (user.length === 0) {
-          return {
+        },
+    });
+    if (user.length === 0) {
+        return {
             code: 400,
             massage: "No desconfiamos de ti pero… ¿Puedes revisar tu información?",
-          };
-        } else {
-          return {
+        };
+    } else {
+        return {
             code: 200,
             message: "Autenticado",
-          };
-        }
-      }
-      
-      router.post("/login", async (req, res) => {
-        const usuario = req.body;
-        const respuesta = await validacion(usuario.email, usuario.password);
-        res.status(respuesta.code);
-        res.send(respuesta);
-      });
-      
-      app.use("/api", router);
+        };
+    }
+}
+
+router.post("/login", async (req, res) => {
+    const usuario = req.body;
+    const respuesta = await validacion(usuario.email, usuario.password);
+    res.status(respuesta.code);
+    res.send(respuesta);
+});
+
+app.use("/api", router);
 
 
 app.listen(PORT)
-console.log (`Servidor Corriendo en el puerto ${PORT}`)
+console.log(`Servidor Corriendo en el puerto ${PORT}`)
