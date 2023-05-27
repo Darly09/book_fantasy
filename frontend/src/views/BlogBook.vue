@@ -10,13 +10,11 @@ import FooterC from '../components/common/FooterC.vue';
     <NavBar />
     <section >
         <div class="x">
-            <h2>Disfrutar y devertirse con un buen libro</h2>
+            <h2>Genio de la literatura universal</h2>
         </div>
         <br>
-        <h1>LA IMPORTANCIA DE LEER CUENTOS Y LIBROS INFANTILES</h1><br><br><br>
-        <p>¿Te has preguntado por qué es importante leer para los niños y niñas?, ¿sabes cómo enseñarles el hábito de la
-            lectura? El día 2 de abril se celebra el Día Internacional del libro infantil y juvenil, por lo que es una buena
-            ocasión para recordar la importancia de leer cuentos y libros infantiles.</p>
+        <h1>GABRIEL GARCÍA MARQUEZ, EL MAESTRO DEL REALISMO MÁGICO</h1><br><br><br>
+        <p>Reconocido como uno de los narradores más importantes del siglo XX, Gabriel García Márquez se convirtió en el máximo representante de un estilo literario conocido como realismo mágico. Alabado y criticado por sus ideas políticas, Gabo, como se le conocía familiarmente, se ganó el aplauso internacional por su obra y en 1982 fue galardonado con el Premio Nobel de Literatura..</p>
     </section>
     <section class="img">
         <img src="../assets/img/BoysBook/ninos-leen 1.svg" alt="">
@@ -61,5 +59,5 @@ padding: 13rem;
 
 }
 
-</style>
 
+</style>
