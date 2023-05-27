@@ -1,11 +1,13 @@
-const {DataTypes} = require("sequelize");
 const {sequelize} = require('../config');
+const {DataTypes} = require("sequelize");
+
 
 const tablalibros = sequelize.define('libros', {
     codigo: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      autoIncrement:true
     },
     nom_lib: {
       type: DataTypes.STRING,
@@ -42,5 +44,6 @@ const tablalibros = sequelize.define('libros', {
      id: false
 
   });
+
 
   module.exports = {tablalibros};
