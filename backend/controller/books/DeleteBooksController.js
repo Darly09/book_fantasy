@@ -1,9 +1,9 @@
-const { tablalibros } = require("../../model/LibrosModel");
+const { booksTable } = require("../../model/BooksModel");
 
 async function deleteBookController(req) {
   const codigo = req.params.id;
   console.log(codigo);
-  const Book = await tablalibros.destroy({
+  const Book = await booksTable.destroy({
     where: {
       codigo: codigo,
     },

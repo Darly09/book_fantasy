@@ -1,4 +1,4 @@
-const { tablalibros } = require("../../model/LibrosModel");
+const { booksTable } = require("../../model/BooksModel");
 
 async function postCreateController(req) {
   const {

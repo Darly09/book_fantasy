@@ -1,9 +1,9 @@
 const dataCarrousel = require("../config/Carrousel");
-const { tablalibros } = require("../model/LibrosModel");
+const { booksTable } = require("../model/BooksModel");
 
 async function getHomeController(req) {
-  const books = await tablalibros.findAll();
-  const best_selling_books = await tablalibros.findAll({ limit: 5 });
+  const books = await booksTable.findAll();
+  const best_selling_books = await booksTable.findAll({ limit: 5 });
   const carrousel = dataCarrousel;
 
   return {
