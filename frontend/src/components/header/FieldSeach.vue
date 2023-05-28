@@ -1,7 +1,7 @@
 <template>
   <div class="buscador">
     <input type="text" placeholder="Buscar título de libro">
-    <button type="button" class="btn btn-light"><img src="../../img/icons/lupa.png" alt="Buscar"> </button>
+    <button type="button" class="btn btn-light"><img src="../../assets//img/icons/lupa.png" alt="Buscar"> </button>
   </div>
 </template>
 <style scoped>
