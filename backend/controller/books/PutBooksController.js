@@ -1,6 +1,6 @@
 const { booksTable } = require("../../model/BooksModel");
 
-async function putBook(req) {
+async function updateBook(req) {
   try {
     const bookId = req.params.id;
     const book = req.body;
@@ -26,4 +26,4 @@ async function putBook(req) {
   }
 }
 
-module.exports = { putBook };
+module.exports = { updateBook };
