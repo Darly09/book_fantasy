@@ -1,11 +1,11 @@
 <template>
     <div>
         <nav>
-            <a href="#">Home</a>
+            <router-link to="/home" exact-active-class="active">Home</router-link> 
             <a href="#">Recomendados</a>
-            <a href="#">Libros infantiles</a>
+            <router-link to="/boysbook" exact-active-class="active">Libros infantiles</router-link> 
             <a href="#">Libros usados</a>
-            <a href="#">Blog</a>
+            <router-link to="/blogbook" exact-active-class="active">Blog</router-link>
             <a href="#">¿Quiénes somos?</a>
         </nav>
     </div>
@@ -33,4 +33,8 @@ nav a:hover {
     color: #D75C37;
 }
 
+.active {
+    color: #D75C37;
+    font-weight: bold;
+}
 </style>
