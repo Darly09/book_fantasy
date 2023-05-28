@@ -1,18 +1,20 @@
 const express = require("express");
-const { sequelize } = require("./config");
 const bodyParser = require("body-parser");
-const { tablaproveedor } = require("./model/ProveedorModel");
-const { tablalibros } = require("./model/LibrosModel");
-const { tablaadministrador } = require("./model/AdministradorModel");
-const { routerLogin } = require("./views/loginviews");
-const { routerBookById } = require("./views/books/GetBookByIdViews");
-const HomeView = require('./views/books/GetBooksViews');
+const { sequelize } = require("./config");
+
+// routes
+const HomeRoutes = require("./views/HomeViews");
+const { BooksRouter } = require("./views/books");
+
 const PORT = 8000;
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/books", HomeView)
+
+// API
+app.use("/api", HomeRoutes, BooksRouter);
 
 sequelize
   .authenticate()
@@ -24,15 +26,6 @@ sequelize
   });
 
 sequelize.sync();
-
-app.use(
-  "/api",
-  routerLogin,
-  routerBookById,
-  tablaproveedor,
-  tablalibros,
-  tablaadministrador
-);
 
 app.listen(PORT);
 console.log(`Servidor Corriendo en el puerto ${PORT}`);

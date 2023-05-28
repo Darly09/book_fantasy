@@ -1,0 +1,43 @@
+<template>
+    <div id="carrusel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../../assets/img/slide/carrusel1.webp" class="d-block w-100" alt="Somos todos">
+            </div>
+            <div class="carousel-item">
+                <img src="../../assets/img/slide/carrusel2.webp" class="d-block w-100" alt="Novedades">
+            </div>
+            <div class="carousel-item">
+                <img src="../../assets/img/slide/carrusel3.png" class="d-block w-100" alt="Autor del mes">
+            </div>
+            <div class="carousel-item">
+                <img src="../../assets/img/slide/preventa.webp" class="d-block w-100" alt="preventa">
+            </div>
+            <div class="carousel-item">
+                <img src="../../assets/img/slide/carrusel4.webp" class="d-block w-100" alt="Descuento">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrusel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrusel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</template>
+
+<style scoped>
+#carrusel{
+    margin: 0 2rem;
+    height: 20rem; 
+}
+
+.carousel-inner{
+    border-radius: 27px; 
+}
+
+</style>
