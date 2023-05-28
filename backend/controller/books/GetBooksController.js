@@ -1,7 +1,7 @@
-const {tablalibros} = require("../../model/LibrosModel");
+const {booksTable} = require("../../model/BooksModel");
 
 async function getBooks (){
-    const books = await tablalibros.findAll()
+    const books = await booksTable.findAll()
     return books 
 }
 

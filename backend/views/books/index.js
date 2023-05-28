@@ -1,11 +1,13 @@
 const express = require("express");
 const BooksRouter = express.Router();
 
+
 const {
   deleteBookController,
   getBookById,
   postCreateController,
   updateBook,
+  getBooks,
 } = require("../../controller/books");
 
 BooksRouter.post("/book", async (req, res) => {
@@ -17,6 +19,15 @@ BooksRouter.post("/book", async (req, res) => {
     return res.status(400).json({ error: "Falta información requerida" });
   }
 });
+
+BooksRouter.get("/book", async (request, response) => {
+  try {
+    const books = await getBooks();
+    response.send(books)
+  } catch (error) {
+    response.send("lo siento no se pueden obtener los libros", error)
+  }
+})
 
 BooksRouter.get("/book/:id", async (req, res) => {
   const id = req.params.id;
@@ -39,5 +50,7 @@ BooksRouter.put("/book/:id", async (req, res) => {
   res.status(update.code);
   res.send(update);
 });
+
+
 
 module.exports = { BooksRouter };
