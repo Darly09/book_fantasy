@@ -12,11 +12,5 @@ deleteRouter.delete("/:id", async (req, res) => {
     console.log("error al borrar" + error);
     return res.status(400).json({ error: "error en su eliminacion" });
   }
-
-  //const deleteBook= async (id) => {
-  //   const response = await fetch(`/libros/${id}`, { method: 'DELETE' });
-  //   const data = await response.json();
-  //   console.log(data);
-  // };
 });
 module.exports = deleteRouter;
