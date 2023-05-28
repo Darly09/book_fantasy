@@ -1,71 +1,91 @@
 <template>
-<footer>
-    <div class="informacion">
-        <div> 
-            <h4>NOSOTROS</h4>
-            <ul>
-                <li>Trabaja con nosotros</li>
-                <li>Escríbenos tus PQRS</li>
-                <li>Préstamo de libros</li>
-                <li>Glosario</li>
-            </ul>
-        </div>
+    <footer>
+        <div class="informacion">
 
-        <div>
-            <h4>LÍNEAS DE ATENCIÓN</h4>
-            <ul>
-                <li>Cra 76 #18a-19 Belén, Medellín</li>
-                <li> 6053197938 - 3196589854</li>                    
-            </ul>
-        </div>
+            <div>
+                <img class="logofooter" src="../../assets/img/logo_footer.svg" alt="Logo Biblioteca">
+            </div>
 
-        <div>
-            <h4> NUESTRAS REDES SOCIALES</h4>
-            <ul class="redes">  
-                <ul>
-                    <li>Facebook Book Fantasy</li>
-                    <li>Instagram Book Fantasy</li>                    
-                    <li>tik tok Book Fantasy</li>
-                    <li>twitter Book Fantasy</li>                    
+            <div>
+                <ul class="sobre_tiendas">
+                   <h6>Sobre nosotros</h6> 
+                   <li>¿Quienes somos?</li>
+                   <li>Mision</li>
+                   <li>Vision</li>
                 </ul>
-            </ul>    
-        </div>
-        
-        <div>
-            <img class="logo_footer" src="../img/logol.png" >
-        </div>
-    </div>
-</footer>
-</template>
+            </div>
+            <div class="contenedor_atencion">                
+                <ul class="otros">
+                    <h6>Otros</h6>
+                    <li>Terminos & condiciones</li>
+                    <li>Políticas de privacidad</li>
+                    <li>Centro de ayuda</li>
+                    
+                </ul>
+            </div>
+            <div class="contenedor_redes">
+                <ul class="redes">
+                    <li><img src="../../assets/img/icons/tiktok.svg" alt="tik tok" width="50"></li>
+                    <li><img src="../../assets/img/icons/youtube.svg" alt="youtube" width="50"></li>
+                    <li><img src="../../assets/img/icons/instagram.svg" alt="instagram" width="50"></li>
+                    <li><img src="../../assets/img/icons/facebook.svg" alt="facebook" width="50"></li>
+                    
+                </ul>
+            </div>
 
+
+        </div>
+
+    </footer>
+</template>
 <style scoped>
-footer .logo_footer {
-    margin-top:1rem;
-    width: 25rem;
+footer img {
+    width: 180px;
 }
-footer{
-    text-align: center;
-    background-color: #ffffffa6;
+
+footer {
+    background-color: #2C353E;
+    align-items: center;
 }
 
 footer .informacion {
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
-   
-
+    justify-content: space-between;
+    margin: 2rem 2rem auto 2rem;
+    padding: 3.5rem 3rem 2rem 3rem;
+    color: white;
 }
 
-footer .ul li {
-    list-style: none;
-    margin: auto 1rem;
+h6 {
+    padding: 0.5rem;
 }
 
-footer.redes {
+ul li {
+    list-style: none;  
+}
+
+li {
+    padding: 1rem;
+}
+
+.contenedor_redes{
     display: flex;
-   
-    }
+    align-items: end;
+}
+.contenedor_redes li{
+    margin: auto 1rem;    
+}
 
 
 
+.redes {
+    display: flex;
+    list-style: none;
+}
+
+.redes img {
+    width: 30px;
+    
+}
 </style>
