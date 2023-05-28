@@ -6,11 +6,13 @@ const { tablalibros } = require("./model/LibrosModel");
 const { tablaadministrador } = require("./model/AdministradorModel");
 const { routerLogin } = require("./views/loginviews");
 const { routerBookById } = require("./views/books/GetBookByIdViews");
+const HomeView = require('./views/books/GetBooksViews');
 const PORT = 8000;
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use("/books", HomeView)
 
 sequelize
   .authenticate()
