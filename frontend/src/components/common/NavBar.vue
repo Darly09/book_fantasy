@@ -36,9 +36,5 @@ nav a:hover {
 .active {
     color: #D75C37;
     font-weight: bold;
-    
-  }
-
-  
-
+}
 </style>
