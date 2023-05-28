@@ -1,4 +1,3 @@
-
 const { tablalibros } = require("../../model/LibrosModel");
 
 async function deleteBookController(req) {
@@ -6,15 +5,15 @@ async function deleteBookController(req) {
   console.log(codigo);
   const Book = await tablalibros.destroy({
     where: {
-      codigo: codigo
-    }
+      codigo: codigo,
+    },
   });
 
-  console.log('Se ha eliminado un libro');
-  return  {
+  console.log("Se ha eliminado un libro");
+  return {
     id: codigo,
-    code: 200, 
-    message: "se elimino correctamente el libro: " + codigo
+    code: 200,
+    message: "se elimino correctamente el libro: " + codigo,
   };
 }
 module.exports = { deleteBookController };

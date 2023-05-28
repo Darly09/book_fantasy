@@ -1,13 +1,14 @@
-const {sequelize} = require('../config');
-const {DataTypes} = require("sequelize");
+const { sequelize } = require("../config");
+const { DataTypes } = require("sequelize");
 
-
-const tablalibros = sequelize.define('libros', {
+const tablalibros = sequelize.define(
+  "libros",
+  {
     codigo: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement:true
+      autoIncrement: true,
     },
     nom_lib: {
       type: DataTypes.STRING,
@@ -16,34 +17,32 @@ const tablalibros = sequelize.define('libros', {
       type: DataTypes.TEXT,
     },
     precio_lib: {
-        type: DataTypes.INTEGER,
-        },
+      type: DataTypes.INTEGER,
+    },
     dcrip_lib: {
-        type: DataTypes.STRING,
-        },
+      type: DataTypes.STRING,
+    },
     aut_lib: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
     gen_lib: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
     stock: {
-        type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
     },
     edic_ltda: {
-        type: DataTypes.STRING,
+      type: DataTypes.STRING,
     },
     id_p1: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
-
   },
-   { 
+  {
     timestamps: false,
-     id: false
+    id: false,
+  }
+);
 
-  });
-
-
-  module.exports = {tablalibros};
+module.exports = { tablalibros };

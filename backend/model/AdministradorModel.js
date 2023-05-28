@@ -1,7 +1,9 @@
-const {DataTypes} = require("sequelize");
-const {sequelize} = require('../config');
+const { DataTypes } = require("sequelize");
+const { sequelize } = require("../config");
 
-const tablaadministrador = sequelize.define('administrador', {
+const tablaadministrador = sequelize.define(
+  "administrador",
+  {
     id_admin: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -14,18 +16,17 @@ const tablaadministrador = sequelize.define('administrador', {
       type: DataTypes.STRING,
     },
     pass_admin: {
-        type: DataTypes.STRING,
-        },
-    id_p2: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.STRING,
     },
-
+    id_p2: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
-   { 
+  {
     timestamps: false,
-     id: false
+    id: false,
+  }
+);
 
-  });
-
-  module.exports = {tablaadministrador};
+module.exports = { tablaadministrador };

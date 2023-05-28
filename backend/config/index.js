@@ -1,9 +1,8 @@
-
-const { Sequelize} = require("sequelize");
+const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize("bookfantasy", "root", "", {
   host: "localhost",
   dialect: "mysql",
 });
 
-module.exports = {sequelize};
+module.exports = { sequelize };

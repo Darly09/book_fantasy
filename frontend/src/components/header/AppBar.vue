@@ -5,18 +5,18 @@ import FieldSeach from './FieldSeach.vue';
 <template>
     <div>
         <router-link class="navbar-item" :to='{ name: "Home" }'>
-            <img src="../../img/logo.jpg" alt="Logo" width="300">
+            <img src="../../assets/img/logo.jpg" alt="Logo" width="300">
         </router-link>
 
         <FieldSeach />
         <p><strong>+57 3053136807</strong></p>
         <div class="iconos">
-            <img src="../../img/icons/whatsapp.png" alt="wsp" width="50">
+            <img src="../../assets/img/icons/whatsapp.png" alt="wsp" width="50">
             <router-link class="navbar-item" :to='{name: "Login"}'>
-                <img src="../../img/icons/administrador.png" alt="usuario" width="50">
+                <img src="../../assets/img/icons/administrador.png" alt="usuario" width="50">
             </router-link>
             
-            <img src="../../img/icons/carrito-de-compras.png" alt="carrito de compras" width="50">
+            <img src="../../assets//img/icons/carrito-de-compras.png" alt="carrito de compras" width="50">
 
         </div>
     </div>
