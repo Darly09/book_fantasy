@@ -3,7 +3,7 @@ import AppBar from '../components/common/AppBar.vue';
 import ProductItem from '../components/home/ProductItem.vue';
 import Products from '../components/product/products.vue';
 import Slide from '../components/home/Slide.vue';
-import FooterC from '../components/common/FooterC.vue';
+import FooterLayout from '../components/common/FooterLayout.vue';
 import NavBar from '../components/common/NavBar.vue';
 import TopBook from '../components/home/TopBook.vue'
 //Se crea una referencia para poder pasar parámetros a un componente
@@ -43,7 +43,7 @@ const products = ref([
     </div>
     <TopBook />
   </div>
-  <FooterC />
+  <FooterLayout/>
 </template>
 <style scoped>
 .contenedor_libros{
