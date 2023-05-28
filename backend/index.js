@@ -1,11 +1,12 @@
 const express = require("express");
 const { sequelize } = require("./config");
 const bodyParser = require("body-parser");
-const { tablaproveedor } = require("./model/ProveedorModel");
-const { tablalibros } = require("./model/LibrosModel");
-const { tablaadministrador } = require("./model/AdministradorModel");
-const { routerLogin } = require("./views/loginviews");
+const { supplierTable } = require("./model/SupplierModel");
+const { booksTable } = require("./model/BooksModel");
+const { administratorTable } = require("./model/AdministratorModel");
+const { routerLogin } = require("./views/LoginViews");
 const { routerBookById } = require("./views/books/GetBookByIdViews");
+const { routerPutBook } = require("./views/books/PutBooksViews");
 const PORT = 8000;
 const app = express();
 
@@ -27,9 +28,10 @@ app.use(
   "/api",
   routerLogin,
   routerBookById,
-  tablaproveedor,
-  tablalibros,
-  tablaadministrador
+  routerPutBook,
+  supplierTable,
+  booksTable,
+  administratorTable
 );
 
 app.listen(PORT);

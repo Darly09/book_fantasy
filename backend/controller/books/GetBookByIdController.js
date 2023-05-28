@@ -1,4 +1,4 @@
-const { tablalibros } = require("../../model/LibrosModel");
+const { booksTable  } = require("../../model/BooksModel");
 
 async function getBookById(id) {
   if (id == undefined || id == "" || id == null) {
@@ -8,7 +8,7 @@ async function getBookById(id) {
     };
   }
 
-  const book = await tablalibros.findAll({
+  const book = await booksTable.findAll({
     where: {
       codigo: id,
     },
