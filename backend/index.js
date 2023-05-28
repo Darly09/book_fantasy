@@ -1,15 +1,12 @@
 const express = require("express");
 const { sequelize } = require("./config");
 const bodyParser = require("body-parser");
-const { tablaproveedor } = require("./model/ProveedorModel");
-const { tablalibros } = require("./model/LibrosModel");
-const { tablaadministrador } = require("./model/AdministradorModel");
-const { routerLogin } = require("./views/loginviews");
+const { supplierTable } = require("./model/SupplierModel");
+const { booksTable } = require("./model/BooksModel");
+const { administratorTable } = require("./model/AdministratorModel");
+const { routerLogin } = require("./views/LoginViews");
 const { routerBookById } = require("./views/books/GetBookByIdViews");
-const deleteRouter = require("./views/books/DeleteBooksViews");
-const HomeRoutes = require("./views/HomeViews");
-const CreateRoutes = require("./views/books/CreateBooksViews");
-
+const { routerPutBook } = require("./views/books/PutBooksViews");
 const PORT = 8000;
 const app = express();
 
@@ -38,4 +35,15 @@ sequelize
 
 sequelize.sync();
 
-app.listen(PORT, async () => console.log("Estoy escuchando"));
+app.use(
+  "/api",
+  routerLogin,
+  routerBookById,
+  routerPutBook,
+  supplierTable,
+  booksTable,
+  administratorTable
+);
+
+app.listen(PORT);
+console.log(`Servidor Corriendo en el puerto ${PORT}`);

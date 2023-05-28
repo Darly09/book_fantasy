@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../config");
 
-const tablaadministrador = sequelize.define(
+const administratorTable = sequelize.define(
   "administrador",
   {
     id_admin: {
@@ -29,4 +29,4 @@ const tablaadministrador = sequelize.define(
   }
 );
 
-module.exports = { tablaadministrador };
+module.exports = { administratorTable };
