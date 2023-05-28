@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../config");
 
-const tablalibros = sequelize.define(
+const booksTable = sequelize.define(
   "libros",
   {
     codigo: {
@@ -44,4 +44,4 @@ const tablalibros = sequelize.define(
   }
 );
 
-module.exports = { tablalibros };
+module.exports = { booksTable };

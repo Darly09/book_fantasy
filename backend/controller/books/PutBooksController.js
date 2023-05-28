@@ -1,11 +1,11 @@
-const { tablalibros } = require("../../model/LibrosModel");
+const { booksTable } = require("../../model/BooksModel");
 
 async function putBook(req) {
   try {
     const bookId = req.params.id;
     const book = req.body;
 
-    await tablalibros.update(
+    await booksTable.update(
       {
         nom_lib: book.nom_lib,
         imagen: book.imagen,

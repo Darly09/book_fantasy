@@ -1,8 +1,8 @@
-const {tablaadministrador} = require('../model/AdministradorModel');
+const {administratorTable} = require('../model/AdministratorModel'); 
 
-async function validacion(email, password) {
+async function validation(email, password) {
     const expReg =/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const esValido = expReg.test(email);
+    const isValid = expReg.test(email);
   
     if (password === "" || password === undefined || password === null) {
       return {
@@ -16,7 +16,7 @@ async function validacion(email, password) {
         message:
           "Te falto el correo, comprueba que lo escribiste e intenta nuevamente",
       };
-    } else if (esValido == false) {
+    } else if (isValid == false) {
       return {
         code: 400,
         message:
@@ -24,7 +24,7 @@ async function validacion(email, password) {
       };
     }
   
-    const user = await tablaadministrador.findAll({
+    const user = await administratorTable.findAll({
       where: {
         email_admin: email,
         pass_admin: password,
@@ -43,4 +43,4 @@ async function validacion(email, password) {
     }
   }
 
-  module.exports = {validacion};
+  module.exports = {validation};
