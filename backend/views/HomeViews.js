@@ -2,7 +2,7 @@ const express = require("express");
 const { getHomeController } = require("../controller/HomeController");
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/home", async (req, res) => {
   try {
     const { carrousel, books, best_selling_books } = await getHomeController(
       req
