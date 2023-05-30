@@ -1,11 +1,11 @@
 <template>
     <section>
         <div class="header">
-            <img src="img/Frame 6.png">
+            <img src="../img/login/Frame 6.png">
         </div>
 
         <div class="header-book">
-            <img src="img/Frame 2.png">
+            <img src="../img/login/Frame 2.png">
         </div>
 
         <div class="container-form"></div>
@@ -23,7 +23,7 @@
             <div class="input">
                 <label class="password">Contraseña </label>
                 <input placeholder="Ingresa tu contraseña" type="password" id="password">
-                <img src="img/vista.png" onclick="pass()" class="pass-ico">
+                <img src="../img/login/visibilidad.png" onclick="pass()" class="pass-ico">
             </div>
             <button type="button" class="button">Ingresar</button>
         </form>
@@ -83,10 +83,10 @@ function pass() {
      align-items: center;
      flex: 0 0 calc(50%);
      margin: calc(65% + 25px);
-     background-image: url('img/Login.png');
+     background-image: url('../img/login/Login.png');
      border-radius: 5%;
      background-size: cover;
-     margin-top: 27rem;
+     margin-top: 55rem;
      position: absolute;
      width: 398px;
      height: 395px;
