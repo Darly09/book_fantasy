@@ -5,5 +5,6 @@ import router from './router'
 
 //Inyectar código html al index
 const app = createApp(App)
+
 app.use(router)
 app.mount('#app')
