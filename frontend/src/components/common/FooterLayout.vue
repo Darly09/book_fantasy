@@ -1,6 +1,14 @@
 <template>
     <footer>
         <div class="informacion">
+<<<<<<< HEAD
+=======
+
+            <div>
+                <img class="logofooter" src="../../assets/img/icons/logo_footer.svg" alt="Logo Biblioteca">
+            </div>
+
+>>>>>>> 1b5a120 (Se realiza el componente del NavBar del Home del administrador, segun el diseño.)
             <div>
                 <h4>SOBRE NOSOTROS</h4>
                 <ul class="sobre_tiendas">

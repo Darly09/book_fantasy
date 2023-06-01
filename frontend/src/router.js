@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    redirect: "BoysBook",
+    redirect: "Admin",
   },
   {
     path: "/home",
@@ -25,7 +25,11 @@ const routes = [
     name:"BlogBook",
     component: () => import("./views/blogbook.vue")
   },
-  
+  {
+    path:"/admin",
+    name:"Admin",
+    component: () => import("./views/AdminView.vue")
+  },  
 ];
 const router = createRouter({
   history: createWebHistory(),
