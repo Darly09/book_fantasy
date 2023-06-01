@@ -1,7 +1,7 @@
 <script setup>
 import AppBar from '../components/common/AppBar.vue';
 import NavBar from '../components/common/NavBar.vue';
-import FooterC from '../components/common/FooterC.vue';
+import FooterLayout from '../components/common/FooterLayout.vue';
 
 </script>
 
@@ -38,7 +38,7 @@ import FooterC from '../components/common/FooterC.vue';
             lo que significa la solidaridad, el respeto, la paz o la igualdad.</p>
 
     </section>
-    <FooterC />
+    <FooterLayout />
 </template>
 
 <style scoped>
