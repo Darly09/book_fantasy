@@ -1,10 +1,17 @@
 <script setup>
+import { onMounted } from 'vue';
 import AppBar from '../components/common/AppBar.vue';
 import Products from '../components/product/Products.vue';
 import Slide from '../components/home/Slide.vue';
 import FooterLayout from '../components/common/FooterLayout.vue';
 import NavBar from '../components/common/NavBar.vue';
 import Top from '../components/product/Top.vue'
+import { getHomeInformation } from '../services/home.services';
+
+onMounted(async () => {
+  const data = await getHomeInformation()
+  console.log(data)
+})
 </script>
 <template>
   <AppBar />
