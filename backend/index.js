@@ -6,6 +6,7 @@ const { sequelize } = require("./config");
 const HomeRoutes = require("./views/HomeViews");
 const { LoginRoutes } = require("./views/LoginViews");
 const { BooksRouter } = require("./views/books");
+const {HomeGeneroViews} = require('./Views/HomeGeneroViews');
 
 const PORT = 8000;
 const app = express();
@@ -17,7 +18,7 @@ app.use(bodyParser.json());
 app.use("/api", HomeRoutes, LoginRoutes, BooksRouter);
 
 sequelize
-  .authenticate()
+  .authenticate() 
   .then(() => {
     console.log("CONEXION A LA BASE DE DATOS EXITOSA!");
   })
