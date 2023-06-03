@@ -1,15 +1,4 @@
 
-<script>
-function pass(){
-    var tipo = document.getElementById("password");
-if(tipo.type == 'password'){
-    tipo.type = 'text';
-}else {
-      tipo.type = 'password';
-   
-}
-}
-</script>
 
 
 
@@ -36,9 +25,10 @@ if(tipo.type == 'password'){
 
                 <div class="input">
                     <label class="password">Contraseña </label>
-                    <input  placeholder="Ingresa tu contraseña" type="password"  id="password" >
-                    <img  src="../assets/img/login/vista.png" onclick="pass()" class="pass-ico">
+                    <input placeholder="Ingresa tu contraseña" type="password" id="password">
+                    <img src="../assets/img/login/vista.png" onclick="pass()" class="pass-ico">
                 </div>
+                
     
                 <button type="button" class="button"> <span>Ingresar</span> </button>
             </form>
@@ -52,7 +42,18 @@ if(tipo.type == 'password'){
     </section>
 </template>
 
+<script>
+ function togglePasswordVisibility() {
+    var password = document.getElementById("password");
+    if (password.type === "password") {
+      passwordt.type = "text";
+    } else {
+      passwordInput.type = "password";
+    }
+  }
 
+  
+</script>
 
 <style scoped>
 section {
@@ -115,15 +116,15 @@ h2 {
 
 }
 
-.pass-ico{
+.input .pass-ico {
+    background-color: blue;
+    flex-direction: row;
     position: absolute;
-    height: 2rem;
-    display: flex;
-    left: 45rem;
-    top: 33rem;
+    margin-top: 2rem;
+    margin-left: 33rem;
+    height: 25px;
     cursor: pointer;
 }
-
 
 .input input {
     background-color: #F5F7F9;
