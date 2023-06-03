@@ -10,19 +10,23 @@ import { getHomeInformation } from '../services/home.services';
 
 // Variable reactiva 💋
 const bestSellingBooks = ref([]);
+const carousel = ref([]);
+const books = ref([]);
 
 // Ciclo de vida del componente, se activa cuando se monta el componente
 onMounted(async () => {
   const homeInformation = await getHomeInformation()
   bestSellingBooks.value = homeInformation.best_selling_books;
+  carousel.value = homeInformation.carrousel;
+  books.value = homeInformation.books;
 })
 </script>
 <template>
   <AppBar />
   <NavBar />
-  <Slide />
+  <Slide :carousel="carousel" />
   <div class="contenedor_libros">
-    <Products class="libros" />
+    <Products :products="books" class="libros" />
     <Top class="top" :tops="bestSellingBooks" titulo="Los más vendidos"/>
   </div>
   <FooterLayout />
