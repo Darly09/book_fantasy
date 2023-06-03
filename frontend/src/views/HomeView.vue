@@ -21,6 +21,8 @@ import Top from '../components/product/Top.vue'
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  margin: 0 2rem;
+  gap: 2rem;
 }
 
 .libros {
