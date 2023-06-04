@@ -1,22 +1,22 @@
 <template>
     <section>
-        <Vue3EasyDataTable :headers="headers" :items="items" />
+        <BooksTable :headers="headers" :items="items" />
     </section>
 </template>
 
 <script setup>
 
-import Vue3EasyDataTable from 'vue3-easy-data-table';
+import BooksTable from 'vue3-easy-data-table';
 
 const headers = [
-    { text: "PLAYER", value: "player" },
-    { text: "TEAM", value: "team" },
-    { text: "NUMBER", value: "number" },
-    { text: "POSITION", value: "position" },
-    { text: "HEIGHT", value: "indicator.height" },
-    { text: "WEIGHT (lbs)", value: "indicator.weight", sortable: true },
-    { text: "LAST ATTENDED", value: "lastAttended", width: 200 },
-    { text: "COUNTRY", value: "country" },
+    { text: "Código", value: "codigo"},
+    { text: "Autor", value: "autor"},
+    { text: "Precio", value: "precio"},
+    { text: "Genero", value: "genero"},
+    { text: "Registro", value: "fecha"},
+    { text: "Estado", value: "stok"},
+    { text: "Editar", value: "editar"},
+    { text: "Eliminar", value: "eliminar"},
 ];
 
 

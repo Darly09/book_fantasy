@@ -2,13 +2,15 @@
 import ContentAdmin from '../components/admin/ContentAdmin.vue';
 import HeaderAdmin from '../components/admin/HeaderAdmin.vue';
 import NavBarAdmin from '../components/admin/NavBarAdmin.vue'
+
+const name = "Mor"
 </script>
 
 <template>
     <main>
         <NavBarAdmin />
         <section>
-            <HeaderAdmin nombre="Felipe" />
+            <HeaderAdmin :nombre = "name" />
             <ContentAdmin />
         </section>
     </main>
