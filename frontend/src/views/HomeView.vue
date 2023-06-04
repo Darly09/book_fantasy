@@ -1,10 +1,21 @@
 <script setup>
+import { onMounted, ref } from 'vue';
 import AppBar from '../components/common/AppBar.vue';
 import Products from '../components/product/Products.vue';
 import Slide from '../components/home/Slide.vue';
 import FooterLayout from '../components/common/FooterLayout.vue';
 import NavBar from '../components/common/NavBar.vue';
 import Top from '../components/product/Top.vue'
+import { getHomeInformation } from '../services/home.services';
+
+// Variable reactiva 💋
+const bestSellingBooks = ref([]);
+
+// Ciclo de vida del componente, se activa cuando se monta el componente
+onMounted(async () => {
+  const homeInformation = await getHomeInformation()
+  bestSellingBooks.value = homeInformation.best_selling_books;
+})
 </script>
 <template>
   <AppBar />
@@ -12,7 +23,7 @@ import Top from '../components/product/Top.vue'
   <Slide />
   <div class="contenedor_libros">
     <Products class="libros" />
-    <Top class="top" titulo="Los más vendidos"/>
+    <Top class="top" :tops="bestSellingBooks" titulo="Los más vendidos"/>
   </div>
   <FooterLayout />
 </template>
