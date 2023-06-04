@@ -6,7 +6,7 @@
             <router-link to="/boysbook" exact-active-class="active">Libros infantiles</router-link> 
             <a href="#">Libros usados</a>
             <router-link to="/blogbook" exact-active-class="active">Blog</router-link>
-            <a href="#">¿Quiénes somos?</a>
+            <router-link to="/whobook" exact-active-class="active">¿ Quienes Somos ?</router-link>
         </nav>
     </div>
 </template>

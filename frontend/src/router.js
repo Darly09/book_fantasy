@@ -23,12 +23,12 @@ const routes = [
   {
     path:"/blogbook",
     name:"BlogBook",
-    component: () => import("./views/blogbook.vue"),
+    component: () => import("./views/BlogBook.vue"),
   },
   {
     path:"/whobook",
     name:"Whobook",
-    component: () => import("./views/whobook.vue"),
+    component: () => import("./views/WhoBook.vue"),
   },
   
 ];
