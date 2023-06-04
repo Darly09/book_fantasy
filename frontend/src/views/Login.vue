@@ -1,119 +1,153 @@
+
 <template>
     <section>
-        <div>
-            <input class="encabezado" id="encabezado" type="text" placeholder="Book Fantasy" disabled>
+        <div class="header">
+            <router-link to="/home" exact-active-class="active"><img src="../assets/img/login/Frame 6.png"></router-link> 
+            <img src="../assets/img/login/Frame 2.png">
+        </div>
+        <div class="img-form"></div>
+        <div class="container_form">
+            
+            <form class="form">
+
+                <div class="text-form">
+                    <h2>¡Bienvenido!</h2>
+                    <p>Para ingresar, completa los campos </p>
+                </div>
+
+                <div class="input">
+                    <label for="user">Email</label>
+                    <input placeholder="Ingresa tu email" type="text" id="usuario">
+                </div>
+
+                <div class="input">
+                    <label class="password">Contraseña </label>
+                    <input placeholder="Ingresa tu contraseña" :type="typeInputPassword" id="password">
+                    <img src="../assets/img/login/vista.png" @click="changeInputPasswordType" class="pass-ico" >
+                </div>
+                
+    
+                <button type="button" class="button"> <span>Ingresar</span> </button>
+            </form>
+
+            <div class="container_img">
+                <img src="../assets/img/login/imgLogin.svg" >
+            </div>
+            
         </div>
 
-        <form class="contenedor">
-            
-
-            <div class="cabecera_correo">
-               
-                <label for="FormEmail" class="form-label">Correo </label>
-            </div>
-            <input type="email" class="form-control" placeholder="Ingrese su correo" id="FormEmail">
-
-            <div class="cabecera_contraseña">
-        
-                <label for="Formpassword" class="form-label">Contraseña</label>
-            </div>
-            <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="Formpassword">
-
-            <div class="form-check">
-                <label>
-                    ¿Recordar usuario?
-                </label>
-                <input type="checkbox" value="">
-            </div>
-
-            <button type="button" class="button">Ingresar</button>
-        </form>
     </section>
 </template>
 
-<style scoped>
-.encabezado {
-    display: flex;
-    background-color: rgb(255, 255, 255);
-    padding: 1rem;
-    width: 50rem;
-    margin: calc(0.5% + 2rem);
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 1rem;
-    text-align: center;
-    font-size: x-large;
-}
+<script setup>
+import { ref } from 'vue';
+const typeInputPassword = ref("password")
 
-section {
-    background-image: url('../img/inicioo.jpg');
-    background-size: cover;
-    background-position: center;
-    padding-top: 10px;
-    height: 60rem;
-    padding-left: 0.5rem;
+function changeInputPasswordType() {
+    typeInputPassword.value = typeInputPassword.value === "password" ? "text" : "password";
 }
-.contenedor {
-    justify-content: center;
+</script>
+
+<style scoped>
+section {
     display: flex;
     flex-direction: column;
-    margin: calc(0.5% + 6rem);
-    max-width: max-content;
-    padding: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 1rem;
-    background-color: #0d58a3a6;
+    margin-bottom: 8rem;
 }
 
-.contenedor .imagen_perfil {
-    align-self: center;
-    max-width: 10rem;
-    border-radius: 50%;
-}
-
-.contenedor .cabecera_correo {
-    padding-left: 1rem;
-    color: black;
-    font-size: larger
-}
-
-.contenedor .cabecera_correo img {
-    max-width: 2rem;
-}
-.contenedor .cabecera_contraseña {
-    padding-left: 0.7rem;
-    color: black;
-    font-size: larger
-}
-
-.contenedor .cabecera_contraseña img {
-    max-width: 2rem;
-}
-.contenedor .form-check {
+.header {
+    margin:4rem 0;
     display: flex;
-    font-size: larger;
-    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 4rem;
+
 }
-.contenedor .form-control {
-    border-radius: 1rem;
+
+.container_form {
+    display: flex;
+    justify-content: flex-end;
 }
-.contenedor .form-check input {
-    max-width: 1rem;
+
+h2 {
+    text-align: center;
+    font-size: 30px;
 }
-input {
-    width: 20rem;
+
+.form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
+
+.text-form p {
+    margin-bottom: 3.5rem;
+    color: #5b656f;
+    font-size: 16px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    position: relative;
+}
+
+
+
+.container_img {
+    background-color: #C1D8C9;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+}
+
+.input .pass-ico {
+    flex-direction: row;
+    position: absolute;
+    margin-top: 2.1rem;
+    height: 25px;
+    cursor: pointer;
+    right: 10px;
+}
+
+.input input {
+    background-color: #F5F7F9;
+    margin-bottom: 1.6rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+
 .button {
-    border: none;
-    border-radius: 0.9rem;
-    padding: 0.5rem 5rem;
+    background-color: #D75C37;
+    border: 1px solid transparent;
+    width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 4rem;
 }
-button:active {
+
+span {
+    color: #ffff;
+}
+
+.button:active {
     transform: translateY(4px);
 }
-button:hover {
-    background-color: #748da5a6;
-}
-</style>
 
+.button:hover {
+    background-color: #e46444a6;
+}</style>
