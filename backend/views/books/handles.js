@@ -3,7 +3,8 @@ const {
   getBookById,
   deleteBookController,
   updateBook,
-  getBooks
+  getBooks,
+  getBookGender
 } = require("../../controller/books");
 
 const handleCreateBook = async (req, res) => {
@@ -42,10 +43,18 @@ const handleBooks = async (req,res)=>{
   res.send (await getBooks())
 };
 
+const handleBooksGender = async (req,res) => {
+  const gender = req.params.gender;
+  const books = await getBookGender(gender);
+  res.status(books.code);
+  res.send(books);
+};
+
 module.exports = {
   handleCreateBook,
   handleBookById,
   handleUpdateBook,
   handleDeleteBook,
-  handleBooks
+  handleBooks,
+  handleBooksGender
 };

@@ -7,7 +7,8 @@ const {
   handleBookById,
   handleUpdateBook,
   handleDeleteBook,
-  handleBooks
+  handleBooks,
+  handleBooksGender
 } = require("./handles");
 
 BooksRouter.post("/book", handleCreateBook);
@@ -19,5 +20,7 @@ BooksRouter.delete("/book/:id", handleDeleteBook);
 BooksRouter.put("/book/:id", handleUpdateBook);
 
 BooksRouter.get("/books", handleBooks);
+
+BooksRouter.get("/books/:gender", handleBooksGender);
 
 module.exports = { BooksRouter };

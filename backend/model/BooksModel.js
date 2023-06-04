@@ -26,6 +26,7 @@ const booksTable = sequelize.define(
     },
     gen_lib: {
       type: DataTypes.STRING,
+      allowNull: true
     },
     stock: {
       type: DataTypes.INTEGER,
