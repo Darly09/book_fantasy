@@ -3,6 +3,7 @@ const {
   getBookById,
   deleteBookController,
   updateBook,
+  getBooks
 } = require("../../controller/books");
 
 const handleCreateBook = async (req, res) => {
@@ -35,6 +36,10 @@ const handleUpdateBook = async (req, res) => {
   const update = await updateBook(req);
   res.status(update.code);
   res.send(update);
+}; 
+
+const handleBooks = async (req,res)=>{
+  res.send (await getBooks())
 };
 
 module.exports = {
@@ -42,4 +47,5 @@ module.exports = {
   handleBookById,
   handleUpdateBook,
   handleDeleteBook,
+  handleBooks
 };
