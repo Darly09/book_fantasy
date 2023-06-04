@@ -2,7 +2,7 @@
     <nav>
         <div class="contenedor_cabecera">
             <img class="logo_login" src="../../assets/img/icons/logo_footer.svg" alt="Logo login">
-            <button class="button_home">Home</button>
+            <button class="button_home"><strong>Home</strong></button>
         </div>
         <div class="contenedor_salir">
             <img class="salir" src="../../assets/img/icons/salir.svg" alt="Salir">
@@ -13,26 +13,30 @@
 
 <style scoped>
 nav {
-
     height: 100vh;
-    width: 19rem;
+    width: 16rem;
     background: #2C353E;
     display: flex;
     flex-direction: column;
     border-radius: 0 1rem 1rem 0;
-    padding: 5rem 1.5rem 3rem 1.5rem;
+    padding: 3.5rem 1.5rem 3rem 1.5rem;
     justify-content: space-between;
 }
 
 .contenedor_cabecera {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .logo_login {
     display: flex;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0px;
+    gap: 8px;
+    width: 100px;
+    left: 96px;
+    top: 61px;
 }
 
 .button_home {
@@ -40,19 +44,19 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    padding: 0.5rem;
+    padding: 0.2rem;
     background: #fff;
-    border-radius: 0.7rem;
+    border-radius: 0.3rem;
     color: #2C353E;
-    font-size: 16px;
+    font-size: 10px;
+    border: none;
+    width: 130px;
 }
 
 .contenedor_salir {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* padding: 0 1rem; */
 }
 
 .salir {
@@ -67,7 +71,7 @@ p {
 
 p a {
     color: #fff;
-    font-size: 16px;
+    font-size: 12px;
     text-decoration: none;
 }
 </style>

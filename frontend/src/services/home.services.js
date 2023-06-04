@@ -1,4 +1,4 @@
-const URL_BASE = 'http://localhost:8000/api'
+import { URL_BASE } from "../config";
 
 export async function getHomeInformation() {
     try {
