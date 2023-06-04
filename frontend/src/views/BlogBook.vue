@@ -233,13 +233,6 @@ form {
     font-size: 30px;
 }
 
-.text_one {
-    margin-top: 1.6rem;
-    font-size: 30px;
-    color: #8A939B;
-    font-size: 30px;
-}
-
 .text_two {
     margin-top: 0.6rem;
     color: #2C353E;
