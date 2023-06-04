@@ -11,11 +11,16 @@ dependencies:
     specifier: ^3.2.47
     version: 3.2.47
   vue-router:
+<<<<<<< HEAD
     specifier: '4'
     version: 4.2.2(vue@3.2.47)
   vue3-easy-data-table:
     specifier: ^1.5.42
     version: 1.5.42
+=======
+    specifier: ^4.2.2
+    version: 4.2.2(vue@3.2.47)
+>>>>>>> 25e3baf8a85518608de864106d3d6866c5d6c119
 
 devDependencies:
   '@vitejs/plugin-vue':
@@ -593,12 +598,15 @@ packages:
       vue: 3.2.47
     dev: false
 
+<<<<<<< HEAD
   /vue3-easy-data-table@1.5.42:
     resolution: {integrity: sha512-dJfu1c05qidHB5/OxRoc2WtR4Qr4St8/SLUV3dagFZlF+b5Jzi2WdqEYAW4TX1nl/kxI7CrIvGLCpGfxcZYEDQ==}
     dependencies:
       vue: 3.2.47
     dev: false
 
+=======
+>>>>>>> 25e3baf8a85518608de864106d3d6866c5d6c119
   /vue@3.2.47:
     resolution: {integrity: sha512-60188y/9Dc9WVrAZeUVSDxRQOZ+z+y5nO2ts9jWXSTkMvayiWxCWOWtBQoYjLeccfXkiiPZWAHcV+WTPhkqJHQ==}
     dependencies:

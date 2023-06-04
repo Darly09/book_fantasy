@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { sequelize } = require("./config");
+const cors = require('cors');
 
 // routes
 const HomeRoutes = require("./views/HomeViews");
@@ -12,12 +13,15 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(cors({
+    origin: '*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
+}));
 // API
 app.use("/api", HomeRoutes, LoginRoutes, BooksRouter);
 
 sequelize
-  .authenticate()
+  .authenticate() 
   .then(() => {
     console.log("CONEXION A LA BASE DE DATOS EXITOSA!");
   })
