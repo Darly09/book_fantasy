@@ -7,7 +7,6 @@ const cors = require('cors');
 const HomeRoutes = require("./views/HomeViews");
 const { LoginRoutes } = require("./views/LoginViews");
 const { BooksRouter } = require("./views/books");
-// const {HomeGeneroViews} = require('./views/HomeGeneroViews');
 
 const PORT = 8000;
 const app = express();
