@@ -24,8 +24,7 @@ defineProps(['carousel'])
 
 <style scoped>
 #carrusel{
-    margin: 0 2rem;
-    height: 20rem; 
+    margin: 0 2rem 2rem 2rem;
 }
 
 .carousel-inner{
