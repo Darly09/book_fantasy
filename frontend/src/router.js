@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    redirect: "BoysBook",
+    redirect: "home",
   },
   {
     path: "/home",
@@ -11,9 +11,9 @@ const routes = [
     component: () => import("./views/HomeView.vue"),
   },
   {
-    path: "/Login",
+    path: "/login",
     name: "Login",
-    component: () => import("./views/Login.vue"),
+    component: () => import("./views/login.vue"),
   },
   {
     path:"/boysbook",
@@ -23,16 +23,14 @@ const routes = [
   {
     path:"/blogbook",
     name:"BlogBook",
-    component: () => import("./views/blogbook.vue")
+    component: () => import("./views/blogbook.vue"),
   },
-  
   {
     path:"/whobook",
-    name:"WhoBook",
-    component: () => import("./views/whobook.vue")
+    name:"Whobook",
+    component: () => import("./views/whobook.vue"),
   },
   
-
 ];
 const router = createRouter({
   history: createWebHistory(),

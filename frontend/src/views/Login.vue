@@ -25,8 +25,8 @@
 
                 <div class="input">
                     <label class="password">Contraseña </label>
-                    <input placeholder="Ingresa tu contraseña" type="password" id="password">
-                    <img src="../assets/img/login/vista.png" onclick="pass()" class="pass-ico">
+                    <input placeholder="Ingresa tu contraseña" type="password" id="password" v-model="password">
+                    <img src="../assets/img/login/vista.png" onclick="pass()" class="pass-ico" >
                 </div>
                 
     
@@ -43,7 +43,7 @@
 </template>
 
 <script>
- function togglePasswordVisibility() {
+ function pass() {
     var password = document.getElementById("password");
     if (password.type === "password") {
       passwordt.type = "text";
@@ -117,7 +117,6 @@ h2 {
 }
 
 .input .pass-ico {
-    background-color: blue;
     flex-direction: row;
     position: absolute;
     margin-top: 2rem;
