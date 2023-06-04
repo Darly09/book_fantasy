@@ -217,20 +217,13 @@ const blogBooks = [
 </template>
 
 <style>
+.header {
+    padding: 2rem;
+}
 form {
-    padding: 0 3rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
-}
-
-form section {
-    flex: 0 0 65%;
-    flex-grow: 1;
-    background-color: blue;
-}
-.header {
-    background-color: aqua;
-    padding: 6rem;
 }
 
 .text_one {
@@ -397,5 +390,9 @@ form section {
 
 .top {
     display: flex;
+    margin-top: 1.6rem;
+    margin-left: 3.3rem;
+    flex: 0 0 30%;
+    height: fit-content;
 }
 </style>
