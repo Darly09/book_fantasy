@@ -30,6 +30,12 @@ const routes = [
     name:"Whobook",
     component: () => import("./views/WhoBook.vue"),
   },
+  {
+    path:"/login",
+    name:"",
+    component: () => import("./components/common/AppBar.vue"),
+  },
+  
   
 ];
 const router = createRouter({

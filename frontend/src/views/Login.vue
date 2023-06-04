@@ -1,11 +1,8 @@
 
-
-
-
 <template>
     <section>
         <div class="header">
-            <img src="../assets/img/login/Frame 6.png">
+            <router-link to="/home" exact-active-class="active"><img src="../assets/img/login/Frame 6.png"></router-link> 
             <img src="../assets/img/login/Frame 2.png">
         </div>
         <div class="img-form"></div>
@@ -25,8 +22,8 @@
 
                 <div class="input">
                     <label class="password">Contraseña </label>
-                    <input placeholder="Ingresa tu contraseña" type="password" id="password" v-model="password">
-                    <img src="../assets/img/login/vista.png" onclick="pass()" class="pass-ico" >
+                    <input placeholder="Ingresa tu contraseña" :type="typeInputPassword" id="password">
+                    <img src="../assets/img/login/vista.png" @click="changeInputPasswordType" class="pass-ico" >
                 </div>
                 
     
@@ -42,17 +39,13 @@
     </section>
 </template>
 
-<script>
- function pass() {
-    var password = document.getElementById("password");
-    if (password.type === "password") {
-      passwordt.type = "text";
-    } else {
-      passwordInput.type = "password";
-    }
-  }
+<script setup>
+import { ref } from 'vue';
+const typeInputPassword = ref("password")
 
-  
+function changeInputPasswordType() {
+    typeInputPassword.value = typeInputPassword.value === "password" ? "text" : "password";
+}
 </script>
 
 <style scoped>
@@ -100,6 +93,7 @@ h2 {
     display: flex;
     flex-direction: column;
     width: 60%;
+    position: relative;
 }
 
 
@@ -119,10 +113,10 @@ h2 {
 .input .pass-ico {
     flex-direction: row;
     position: absolute;
-    margin-top: 2rem;
-    margin-left: 33rem;
+    margin-top: 2.1rem;
     height: 25px;
     cursor: pointer;
+    right: 10px;
 }
 
 .input input {
