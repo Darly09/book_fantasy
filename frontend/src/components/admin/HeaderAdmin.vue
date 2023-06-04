@@ -52,5 +52,6 @@ button {
     align-self: center;
     border: 0;
     color: white;
+    font-size: 16px;
 }
 </style>

@@ -34,7 +34,7 @@ nav {
     align-items: center;
     padding: 0px;
     gap: 8px;
-    width: 100px;
+    width: 150px;
     left: 96px;
     top: 61px;
 }
@@ -46,11 +46,11 @@ nav {
     justify-content: center;
     padding: 0.2rem;
     background: #fff;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     color: #2C353E;
-    font-size: 10px;
+    font-size: 16px;
     border: none;
-    width: 130px;
+    width: 180px;
 }
 
 .contenedor_salir {
@@ -71,7 +71,7 @@ p {
 
 p a {
     color: #fff;
-    font-size: 12px;
+    font-size: 16px;
     text-decoration: none;
 }
 </style>

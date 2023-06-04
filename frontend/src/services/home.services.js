@@ -9,3 +9,4 @@ export async function getHomeInformation() {
         throw new Error(error)
     }
 }
+

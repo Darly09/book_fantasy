@@ -4,39 +4,36 @@ async function postCreateController(req) {
   const {
     nom_lib,
     imagen,
-    prec_li,
+    precio_lib,
     dcrip_lib,
     aut_lib,
     gen_lib,
     stock,
     edic_ltda,
-    id_p1,
   } = req.body;
   console.log(req.body);
 
   if (
     !nom_lib ||
     !imagen ||
-    !prec_li ||
+    !precio_lib ||
     !dcrip_lib ||
     !aut_lib ||
     !gen_lib ||
     !stock ||
-    !edic_ltda ||
-    !id_p1
+    !edic_ltda
   ) {
     return { error: "Falta información requerida" };
   }
-  const book = await tablalibros.create({
+  const book = await booksTable.create({
     nom_lib: nom_lib,
     imagen: imagen,
-    prec_li: prec_li,
+    precio_lib: precio_lib,
     dcrip_lib: dcrip_lib,
     aut_lib: aut_lib,
     gen_lib: gen_lib,
     stock: stock,
-    edic_ltda9: edic_ltda,
-    id_p1: id_p1,
+    edic_ltda: edic_ltda,
   });
   console.log("has creado un nuevo libro");
 

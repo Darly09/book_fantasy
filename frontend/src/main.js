@@ -8,5 +8,6 @@ import 'vue3-easy-data-table/dist/style.css';
 
 //Inyectar código html al index
 const app = createApp(App)
-    .use(router)
-    .mount('#app')
+
+app.use(router)
+app.mount('#app')

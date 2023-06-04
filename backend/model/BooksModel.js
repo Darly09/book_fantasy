@@ -6,7 +6,7 @@ const booksTable = sequelize.define(
   {
     codigo: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       primaryKey: true,
     },
     nom_lib: {
@@ -35,7 +35,7 @@ const booksTable = sequelize.define(
     },
     id_p1: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {

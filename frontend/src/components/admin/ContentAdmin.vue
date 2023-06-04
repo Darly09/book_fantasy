@@ -1,6 +1,6 @@
 <template>
     <section>
-        <BooksTable :headers="headers" :items="books">
+        <BooksTable :headers="headers" :items="books" class="table" :rows-items="[5, 10, 15]" :rows-per-page="10">
             <template #item-nom_lib="item">
                 <div>
                     📖 {{ item.nom_lib }}
@@ -18,10 +18,11 @@
             </template>
 
             <template #item-editar>
-                <img class="edit-icon" src="../../assets/img/icons/editIcon.svg" alt="icono de editar">
+                <!-- <img class="edit-icon" src="../../assets/img/icons/editIcon.svg" alt="icono de editar"> -->
+                <ModalCreateBook/>
             </template>
-            <template #item-eliminar>
-                <img class="delete-icon" src="../../assets/img/icons/deleteIcon.svg" alt="icono de eliminar">
+            <template #item-eliminar="item">
+                <ModalDeleteBook @on-delete="$event => $emit('onDelete', item.codigo)" />
             </template>
         </BooksTable>
     </section>
@@ -30,8 +31,11 @@
 <script setup>
 
 import BooksTable from 'vue3-easy-data-table';
+import ModalDeleteBook from '../admin/ModalDeleteBook.vue';
+import ModalCreateBook from './ModalCreateBook.vue';
 
 defineProps(['books'])
+defineEmits(['onDelete']);
 const headers = [
     { text: "ID", value: "codigo" },
     { text: "Nombre", value: "nom_lib" },
@@ -71,25 +75,28 @@ section {
     color: #5B656F;
 }
 
-.state{
+.state {
     border-radius: 1rem;
     padding: 0 0.5rem 0 0.5rem;
 }
+
 .disponible {
     background-color: #C1D8C9;
     color: #4B8A61;
+    text-align: center;
 }
 
 .agotado {
     background-color: #FFA58A;
     color: #BF3D16;
+    text-align: center;
 }
 
 .edit-icon {
     width: 16px;
 }
 
-.state{
+.state {
     border-radius: 0.5;
 }
 

@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import ContentAdmin from '../components/admin/ContentAdmin.vue';
 import HeaderAdmin from '../components/admin/HeaderAdmin.vue';
 import NavBarAdmin from '../components/admin/NavBarAdmin.vue'
-import { getAllBooks } from '../services/book.services';
+import { getAllBooks, deleteBookByCode } from '../services/book.services';
 
 const name = "Mor"
 const books = ref([]);
@@ -12,6 +12,11 @@ onMounted(async () => {
     const booksResponse = await getAllBooks()
     books.value = booksResponse;
 })
+
+async function handleDelete(code) {
+    await deleteBookByCode(code)
+    books.value = books.value.filter(book =>book.codigo !== code)
+}
 </script>
 
 <template>
@@ -19,7 +24,7 @@ onMounted(async () => {
         <NavBarAdmin />
         <section class="content">
             <HeaderAdmin :nombre="name" />
-            <ContentAdmin :books="books" />
+            <ContentAdmin :books="books" @on-delete="handleDelete"/>
         </section>
     </main>
 </template>

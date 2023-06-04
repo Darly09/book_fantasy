@@ -11,3 +11,16 @@ export async function getAllBooks(){
 
 }
 
+export async function deleteBookByCode(codigo = 0) {
+  try {
+    const respuestaJson = await fetch(`${URL_BASE}/book/${codigo}`,{
+      method: "DELETE"
+    });
+    const respuesta = await  respuestaJson.json()
+    return respuesta
+} catch (error) {
+  throw new Error("Falló el servidor a la hora de eliminar libros") 
+}
+    
+    
+}
