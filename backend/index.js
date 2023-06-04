@@ -21,7 +21,7 @@ app.use(cors({
 app.use("/api", HomeRoutes, LoginRoutes, BooksRouter);
 
 sequelize
-  .authenticate()
+  .authenticate() 
   .then(() => {
     console.log("CONEXION A LA BASE DE DATOS EXITOSA!");
   })
