@@ -1,23 +1,39 @@
-<template>
+<script setup>
+import { ref } from 'vue';
+import { login } from '../services/login.service';
+
+const islogin = ref([]);
+const email = ref ("");
+const password = ref ("");
+
+async  function handleLogin()  {
+   
+  //const loginResponse = await login()
+ // islogin.value = loginResponse.islogin
+}
+
+
+
+</script><template>
     <section>
         <div>
             <input class="encabezado" id="encabezado" type="text" placeholder="Book Fantasy" disabled>
         </div>
 
-        <form class="contenedor">
+        <form class="contenedor" @submit.prevent="handleLogin">
             
 
             <div class="cabecera_correo">
                
                 <label for="FormEmail" class="form-label">Correo </label>
             </div>
-            <input type="email" class="form-control" placeholder="Ingrese su correo" id="FormEmail">
-
+            <input v-model="email" type="email" class="form-control" placeholder="Ingrese su correo" id="FormEmail">
+           
             <div class="cabecera_contraseña">
         
                 <label for="Formpassword" class="form-label">Contraseña</label>
             </div>
-            <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="Formpassword">
+            <input v-model="password" type="password" class="form-control" placeholder="Ingrese su contraseña" id="Formpassword">
 
             <div class="form-check">
                 <label>
@@ -26,7 +42,7 @@
                 <input type="checkbox" value="">
             </div>
 
-            <button type="button" class="button">Ingresar</button>
+            <button type="submit" class="button">Ingresar</button>
         </form>
     </section>
 </template>
