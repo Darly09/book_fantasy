@@ -6,7 +6,7 @@ const booksTable = sequelize.define(
   {
     codigo: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       primaryKey: true,
     },
     nom_lib: {
@@ -18,9 +18,6 @@ const booksTable = sequelize.define(
     precio_lib: {
       type: DataTypes.INTEGER,
     },
-    dcrip_lib: {
-      type: DataTypes.STRING,
-    },
     aut_lib: {
       type: DataTypes.STRING,
     },
@@ -30,12 +27,9 @@ const booksTable = sequelize.define(
     stock: {
       type: DataTypes.INTEGER,
     },
-    edic_ltda: {
-      type: DataTypes.STRING,
-    },
     id_p1: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
   },
   {

@@ -11,9 +11,9 @@ const routes = [
     component: () => import("./views/HomeView.vue"),
   },
   {
-    path: "/Login",
+    path: "/login",
     name: "Login",
-    component: () => import("./views/Login.vue"),
+    component: () => import("./views/login.vue"),
   },
   {
     path:"/boysbook",
@@ -35,6 +35,17 @@ const routes = [
     name:"",
     component: () => import("./components/common/AppBar.vue"),
   },
+  {
+    path:"/whobook",
+    name:"Whobook",
+    component: () => import("./views/WhoBook.vue"),
+  },
+  {
+    path:"/login",
+    name:"",
+    component: () => import("./components/common/AppBar.vue"),
+  },
+  
   
 ];
 const router = createRouter({
@@ -42,3 +53,4 @@ const router = createRouter({
   routes,
 });
 export default router;
+
