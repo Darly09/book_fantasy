@@ -14,8 +14,9 @@ function handleClickDelete() {
     <button class="container-button" @click="isModalOpen = true">
         <img class="delete-icon" src="../../assets/img/icons/deleteIcon.svg" alt="icono de eliminar">
     </button>
-    <CustomModal :is-modal-open="isModalOpen">
+    <CustomModal :is-modal-open="isModalOpen" title="Eliminar">
         <div>
+            <img src="../../assets/img/icons/deleteIconModal.svg" alt="ELiminar">
             <p>Si estás seguro/a de tu decisión y deseas continuar, ten en cuenta que una vez eliminado, no se podrá recuperar la información ni los datos asociados al libro.</p>
             <footer>
                 <button @click="isModalOpen = false">cancel</button>
@@ -27,6 +28,6 @@ function handleClickDelete() {
 <style scoped>
 .container-button {
     background-color: transparent;
-    border: none;
+    border: none;  
 }
 </style>

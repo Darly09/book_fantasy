@@ -5,11 +5,13 @@
             <h2>¡Bienvenido de nuevo, {{nombre}}!</h2>
             <p>Gestiona todos los libros de tu itinerario de una manera fácil y rápida</p>
         </section>
-        <button>Añadir libro</button>
+        <ModalCreateBook />
     </header>
 </template>
 
 <script setup>
+import ModalCreateBook from './ModalCreateBook.vue';
+
 defineProps(["nombre"])
 </script>
 
@@ -21,6 +23,7 @@ header {
     background-color: white;
     padding: 1.5rem;
     border-radius: 0.5rem;
+
 }
 
 .line {
@@ -43,15 +46,5 @@ section p {
     margin: 0;
 }
 
-button {
-    background-color: #D75C37;
-    height: max-content;
-    margin-left: auto;
-    padding: 0.4rem 2rem;
-    border-radius: 0.5rem;
-    align-self: center;
-    border: 0;
-    color: white;
-    font-size: 16px;
-}
+
 </style>

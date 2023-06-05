@@ -18,8 +18,7 @@
             </template>
 
             <template #item-editar>
-                <!-- <img class="edit-icon" src="../../assets/img/icons/editIcon.svg" alt="icono de editar"> -->
-                <ModalCreateBook/>
+                <img class="edit-icon" src="../../assets/img/icons/editIcon.svg" alt="icono de editar">
             </template>
             <template #item-eliminar="item">
                 <ModalDeleteBook @on-delete="$event => $emit('onDelete', item.codigo)" />
@@ -32,7 +31,6 @@
 
 import BooksTable from 'vue3-easy-data-table';
 import ModalDeleteBook from '../admin/ModalDeleteBook.vue';
-import ModalCreateBook from './ModalCreateBook.vue';
 
 defineProps(['books'])
 defineEmits(['onDelete']);

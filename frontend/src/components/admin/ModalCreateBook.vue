@@ -1,31 +1,61 @@
 <script setup>
+//Importamos ref, porque nos vuelve una variable reactiva(que la variable espera que haya un cambio para reaccionar)
 import { ref } from 'vue';
+//
 import CustomModal from '../common/CustomModal.vue';
 
 const isModalOpen = ref(false);
+const emit = defineEmits(['onCreate'])
 console.log(isModalOpen.value);
-</script>
 
+function hadleClickCreate(){
+    emit('onCreate');
+    isModalOpen.value = false;
+}
+</script>
+ 
 <template>
     <button class="container_button" @click="isModalOpen = true">
-        <img class="edit-icon" src="../../assets/img/icons/editIcon.svg" alt="icono de editar">
+        Añadir libro
     </button>
     <CustomModal :is-modal-open="isModalOpen" title="Añadir un libro" >
         <div>
+            <header>
+                <p>Para añadir, completa los espacios vacíos</p>
+            </header>
+            <body>
+                <p>Título de libro*</p>
+                <input type="text">
+                <p>Autor*</p>
+                <input type="text">
+                <p>Precio*</p>
+                <input type="number">
+                <p>Link de la portada del libro*</p>
+                <input type="url">
+                <footer>
+                <button @click="isModalOpen = false">cancel</button>
+                <button @click="hadleClickCreate">Añadir</button>
+                </footer>
+            </body>
         </div>
     </CustomModal>
 </template>
 
 <style scoped>
+
 .container_button {
-    border: none;
-    background-color: transparent;
+    background-color: #D75C37;
+    height: max-content;
+    margin-left: auto;
+    padding: 0.4rem 2rem;
     border-radius: 0.5rem;
-    padding: 0.2rem 0.4rem;
-    margin: 0.2rem;
+    align-self: center;
+    border: 0;
+    color: white;
+    font-size: 16px;
 }
 
 .container_button:hover {
-    background-color: white;
+    background-color: #BF3D16;
 }
 </style>
