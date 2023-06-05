@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import ContentAdmin from '../components/admin/ContentAdmin.vue';
 import HeaderAdmin from '../components/admin/HeaderAdmin.vue';
 import NavBarAdmin from '../components/admin/NavBarAdmin.vue'
-import { getAllBooks, deleteBookByCode } from '../services/book.services';
+import { getAllBooks, deleteBookByCode, createBook } from '../services/book.services';
 
 const name = "Mor"
 const books = ref([]);
@@ -17,13 +17,23 @@ async function handleDelete(code) {
     await deleteBookByCode(code)
     books.value = books.value.filter(book =>book.codigo !== code)
 }
+
+async function handleCreate(book){
+    const response = await createBook(book)
+    if(response.isCreate){
+        books.value.push(response.data)
+    }else{
+        console.error(response.data.error);
+    }
+
+}
 </script>
 
 <template>
     <main>
         <NavBarAdmin />
         <section class="content">
-            <HeaderAdmin :nombre="name" />
+            <HeaderAdmin :nombre="name" @on-create="handleCreate"/>
             <ContentAdmin :books="books" @on-delete="handleDelete"/>
         </section>
     </main>

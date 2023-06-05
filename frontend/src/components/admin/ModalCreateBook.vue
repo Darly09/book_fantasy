@@ -6,10 +6,23 @@ import CustomModal from '../common/CustomModal.vue';
 
 const isModalOpen = ref(false);
 const emit = defineEmits(['onCreate'])
-console.log(isModalOpen.value);
+const titulo = ref(""); 
+const autor = ref("");
+const precio = ref("");
+const genero = ref (""); 
+const cantidad = ref(""); 
+const urlImagen = ref("");
 
 function hadleClickCreate(){
-    emit('onCreate');
+    const book = {
+        nom_lib:titulo.value,
+        aut_lib:autor.value,
+        precio_lib:precio.value,
+        gen_lib:genero.value,
+        stock:cantidad.value,
+        imagen:urlImagen.value
+    }
+    emit('onCreate', book);
     isModalOpen.value = false;
 }
 </script>
@@ -25,13 +38,17 @@ function hadleClickCreate(){
             </header>
             <body>
                 <p>Título de libro*</p>
-                <input type="text">
+                <input type="text" v-model="titulo">
                 <p>Autor*</p>
-                <input type="text">
+                <input type="text" v-model="autor">
                 <p>Precio*</p>
-                <input type="number">
+                <input type="number" v-model="precio">
+                <p>Género*</p>
+                <input type="text" v-model="genero">
+                <p>Cantidad disponible</p>
+                <input type="number" v-model="cantidad">
                 <p>Link de la portada del libro*</p>
-                <input type="url">
+                <input type="url" v-model="urlImagen">
                 <footer>
                 <button @click="isModalOpen = false">cancel</button>
                 <button @click="hadleClickCreate">Añadir</button>

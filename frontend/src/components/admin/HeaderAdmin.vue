@@ -5,7 +5,7 @@
             <h2>¡Bienvenido de nuevo, {{nombre}}!</h2>
             <p>Gestiona todos los libros de tu itinerario de una manera fácil y rápida</p>
         </section>
-        <ModalCreateBook />
+        <ModalCreateBook @on-create="handleClickCreate"/>
     </header>
 </template>
 
@@ -13,6 +13,11 @@
 import ModalCreateBook from './ModalCreateBook.vue';
 
 defineProps(["nombre"])
+const emit = defineEmits(['onCreate']);
+
+async function handleClickCreate(book){
+    emit('onCreate', book)
+}
 </script>
 
 <style scoped>

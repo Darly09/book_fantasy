@@ -19,7 +19,8 @@ function handleClickDelete() {
             <img src="../../assets/img/icons/deleteIconModal.svg" alt="ELiminar">
             <p>Si estás seguro/a de tu decisión y deseas continuar, ten en cuenta que una vez eliminado, no se podrá recuperar la información ni los datos asociados al libro.</p>
             <footer>
-                <button @click="isModalOpen = false">cancel</button>
+                <!--variable reactiva para que cuando se de click, el modal se cierre -->
+                <button @click="isModalOpen = false">Cancel</button>
                 <button @click="handleClickDelete">Si, eliminar</button>
             </footer>
         </div>
