@@ -7,7 +7,7 @@ import FieldSeach from './FieldSeach.vue';
         <img class="logo" src="../../assets/img/logo.svg" alt="Logo" width="300">
         <FieldSeach />
         <div class="iconos">
-            <a href="#"><img src="../../assets/img/icons/usuario.svg" alt="usuario" width="35"></a>
+            <router-link to="/login" exact-active-class="active"><img src="../../assets/img/icons/usuario.svg" alt="usuario" width="35"></router-link>
             <a href="#"><img src="../../assets/img/icons/carrito_compras.svg" alt="carrito de compras" width="35"></a>
 
         </div>
