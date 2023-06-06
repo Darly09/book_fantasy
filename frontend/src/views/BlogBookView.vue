@@ -78,11 +78,11 @@ const blogBooks = [
 
                 <p class="three_paragraph">
                     <strong>
-                        Gabriel empezó a estudiar derecho en Bogotá, pero su carrera se vio
-                        truncada tras el conocido como "Bogotazo", unas sangrientas
-                        revueltas que estallaron en la capital como consecuencia del
-                        asesinato del candidato a la presidencia y líder liberal Jorge
-                        Eliécer Gaitán, el 9 de abril de 1948.</strong>
+                    Gabriel empezó a estudiar derecho en Bogotá, pero su carrera se vio
+                    truncada tras el conocido como "Bogotazo", unas sangrientas
+                    revueltas que estallaron en la capital como consecuencia del
+                    asesinato del candidato a la presidencia y líder liberal Jorge
+                    Eliécer Gaitán, el 9 de abril de 1948.</strong>
                     El joven García Márquez decidió entonces trasladarse a Cartagena de
                     Indias, donde trabajó como periodista en diversos medios como El
                     Universal o El Heraldo. Precisamente al periodismo dedicaría García

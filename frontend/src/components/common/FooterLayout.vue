@@ -1,7 +1,6 @@
 <template>
     <footer>
         <div class="informacion">
-
             <div>
                 <img class="logofooter" src="../../assets/img/logo_footer.svg" alt="Logo Biblioteca">
             </div>

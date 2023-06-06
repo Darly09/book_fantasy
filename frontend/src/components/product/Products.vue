@@ -15,10 +15,6 @@ defineProps(['products'])
 </script>
 
 <style scoped>
-section {
-    margin: auto 2rem;
-}
-
 h4 {
     color: #2C353E;
     width: 155px;

@@ -13,35 +13,29 @@ const routes = [
   {
     path: "/login",
     name: "Login",
-    component: () => import("./views/login.vue"),
+    component: () => import("./views/LoginView.vue"),
   },
   {
-    path:"/boysbook",
-    name:"BoysBook",
-    component: () => import("./views/BoysBook.vue"),
+    path: "/boysbook",
+    name: "BoysBook",
+    component: () => import("./views/BoysBookView.vue"),
   },
   {
-    path:"/blogbook",
-    name:"BlogBook",
-    component: () => import("./views/blogbook.vue"),
+    path: "/blogbook",
+    name: "BlogBook",
+    component: () => import("./views/BlogBookView.vue"),
   },
   {
-    path:"/login",
-    name:"",
-    component: () => import("./components/common/AppBar.vue"),
+    path: "/whobook",
+    name: "Whobook",
+    component: () => import("./views/WhoBookView.vue"),
   },
   {
-    path:"/whobook",
-    name:"Whobook",
-    component: () => import("./views/WhoBook.vue"),
+    path: "/admin",
+    name: "Admin",
+    component: () => import("./views/AdminView.vue")
   },
-  {
-    path:"/login",
-    name:"",
-    component: () => import("./components/common/AppBar.vue"),
-  },
-  
-  
+
 ];
 const router = createRouter({
   history: createWebHistory(),
