@@ -1,46 +1,56 @@
-
 <template>
     <section>
         <div class="header">
-            <router-link to="/home" exact-active-class="active"><img src="../assets/img/login/Frame 6.png"></router-link> 
-            <img src="../assets/img/login/Frame 2.png">
+            <router-link to="/home" exact-active-class="active"><img src="../assets/img/login/Frame 6.png"></router-link>
+            <router-link to="/home" exact-active-class="active"><img src="../assets/img/login/Frame 2.png"></router-link>
         </div>
-        <div class="img-form"></div>
+
         <div class="container_form">
-            
-            <form class="form">
+            <form class="form" @submit.prevent="handleLogin">
 
-                <div class="text-form">
-                    <h2>¡Bienvenido!</h2>
-                    <p>Para ingresar, completa los campos </p>
+
+                <div class="cabecera_correo">
+
+                    <label for="FormEmail" class="form-label">Correo </label>
+                </div>
+                <input v-model="email" type="email" class="form-control" placeholder="Ingrese su correo" id="FormEmail">
+
+                <div class="cabecera_contraseña">
+
+                    <label for="Formpassword" class="form-label">Contraseña</label>
+                </div>
+                <input v-model="password" type="password" class="form-control" placeholder="Ingrese su contraseña"
+                    id="Formpassword">
+
+                <div class="form-check">
+                    <label>
+                        ¿Recordar usuario?
+                    </label>
+                    <input type="checkbox" value="">
                 </div>
 
-                <div class="input">
-                    <label for="user">Email</label>
-                    <input placeholder="Ingresa tu email" type="text" id="usuario">
-                </div>
-
-                <div class="input">
-                    <label class="password">Contraseña </label>
-                    <input placeholder="Ingresa tu contraseña" :type="typeInputPassword" id="password">
-                    <img src="../assets/img/login/vista.png" @click="changeInputPasswordType" class="pass-ico" >
-                </div>
-                
-    
-                <button type="button" class="button"> <span>Ingresar</span> </button>
+                <button type="submit" class="button"><router-link to="/home" exact-active-class="active">Ingresar</router-link></button>
             </form>
-
             <div class="container_img">
-                <img src="../assets/img/login/imgLogin.svg" >
+                <img src="../assets/img/login/imgLogin.svg">
             </div>
-            
         </div>
-
     </section>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import { login } from '../services/login.service';
+
+const islogin = ref([]);
+const email = ref("");
+const password = ref("");
+
+async function handleLogin() {
+
+    const loginResponse = await login()
+    islogin.value = loginResponse.islogin
+}
 const typeInputPassword = ref("password")
 
 function changeInputPasswordType() {
@@ -56,7 +66,7 @@ section {
 }
 
 .header {
-    margin:4rem 0;
+    margin: 4rem 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -140,6 +150,11 @@ h2 {
     margin-top: 4rem;
 }
 
+.button a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
 span {
     color: #ffff;
 }
@@ -150,4 +165,5 @@ span {
 
 .button:hover {
     background-color: #e46444a6;
-}</style>
+}
+</style>
