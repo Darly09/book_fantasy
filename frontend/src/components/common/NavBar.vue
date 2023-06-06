@@ -37,4 +37,10 @@ nav a:hover {
     color: #D75C37;
     font-weight: bold;
 }
+
+.active:after{
+    content: "°";
+    display: block;
+    vertical-align: bottom;
+}
 </style>

@@ -1,6 +1,8 @@
 <script setup>
-defineProps(['isModalOpen', 'title'])
-defineEmits(['onCloseModal'])
+defineProps(['isModalOpen', 'title', 'primaryButtonName'])
+defineEmits(['onCloseModal', 'onAction'])
+
+
 
 </script>
 
@@ -8,9 +10,17 @@ defineEmits(['onCloseModal'])
     <Teleport to="#modal">
         <div class="modal-bg" v-if="isModalOpen">
             <div class="modal">
-                <button @click="$emit('onCloseModal')" class="close-btn">x</button>
-                <h2>{{ title }}</h2>
-                <slot></slot>
+                <div class="top">
+                    <header>
+                        <button @click="$emit('onCloseModal')" class="close-btn">x</button>
+                        <h2>{{ title }}</h2>
+                    </header>
+                    <slot></slot>
+                </div>
+                <footer>
+                    <button class="secondaryButton" @click="$emit('onCloseModal')">Cancelar</button>
+                    <button v-if="primaryButtonName" class="primaryButton" @click="$emit('onAction')">{{ primaryButtonName }}</button>
+                </footer>
             </div>
         </div>
     </Teleport>
@@ -33,13 +43,14 @@ defineEmits(['onCloseModal'])
 .modal {
     position: relative;
     background: white;
-    padding: 50px 100px;
-    border-radius: 5px;
-    box-shadow: 0px 10px 5px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 0.8rem;
     display: block;
-    max-width: 500px;
-    max-height: 500px;
-    height: auto;
+    width: max-content;
+    height: max-content;
+}
+
+.top {
+    padding: 2rem 2rem 0 2rem;
 }
 
 .modal .close-btn {
@@ -48,5 +59,36 @@ defineEmits(['onCloseModal'])
     right: 10px;
     background: none;
     border: none;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    margin-top: 3rem;
+    background-color: #E0E4E8;
+}
+
+footer button {
+    border-radius: 0.5rem;
+    padding: 0.4rem 3rem;
+    border: none;
+}
+
+footer .secondaryButton {
+    background-color: transparent;
+}
+
+footer .secondaryButton:hover {
+    background-color: lightgray;
+}
+
+footer .primaryButton {
+    background-color: #D75C37;
+    color: white;
+}
+
+footer .primaryButton:hover {
+    background-color: #BF3D16;
 }
 </style>

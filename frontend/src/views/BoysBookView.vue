@@ -51,7 +51,7 @@ const childsBooks = [
             <article>
                 <div class="imgtext">
                     <img class="img1" src="../assets/img/boybook/ninos-leen 1.png">
-                    <img class="img2" src="../assets/img/boybook/lectura.png">
+                    <img class="img2" src="../assets/img/boybook/lectura.svg">
                 </div>
             </article>
             <article class="paragraph">
@@ -90,6 +90,10 @@ form {
 form section {
     flex: 0 0 65%;
     flex-grow: 1;
+}
+
+form p{
+    text-align: justify;
 }
 
 .one_text {
