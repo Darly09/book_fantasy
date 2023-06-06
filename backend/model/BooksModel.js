@@ -8,6 +8,7 @@ const booksTable = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: true,
       primaryKey: true,
+      autoIncrement:true
     },
     nom_lib: {
       type: DataTypes.STRING,
@@ -27,11 +28,7 @@ const booksTable = sequelize.define(
     },
     stock: {
       type: DataTypes.INTEGER,
-    },
-    id_p1: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
+    }
   },
   {
     timestamps: false,

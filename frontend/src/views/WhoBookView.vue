@@ -48,14 +48,14 @@ import FooterLayout from '../components/common/FooterLayout.vue';
                     </div>
                     <div class="imagen-center">
                         <div></div>
-                        <img class="img" src="../assets/img/whobook/absurd 2.png">
+                        <img class="img" src="../assets/img/whobook/absurd 2.svg">
                     </div>
                 </div>
             </section>
         </div>
         <section>
             <div class="img_finish">
-                <img src="../assets/img/whobook/Group 10.png">
+                <img src="../assets/img/whobook/description.svg">
             </div>
         </section>
     </article>
@@ -66,6 +66,10 @@ import FooterLayout from '../components/common/FooterLayout.vue';
 article section {
     max-width: 1024px;
     margin: auto;
+}
+
+section p{
+    text-align: justify;
 }
 
 .body {

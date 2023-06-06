@@ -33,7 +33,7 @@ async function validation(email, password) {
   if (user === null) {
     return {
       code: 400,
-      massage: "No desconfiamos de ti pero… ¿Puedes revisar tu información?",
+      message: "No desconfiamos de ti pero… ¿Puedes revisar tu información?",
     };
   } else {
     return {

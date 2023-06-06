@@ -36,7 +36,8 @@ onMounted(async () => {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  padding-right: 2rem;
+  margin: 0 2rem;
+  gap: 2rem;
 }
 
 .libros {
