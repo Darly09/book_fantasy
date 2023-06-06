@@ -25,7 +25,7 @@ watch(props, () => {
     <button class="container_button" @click="isModalOpen = true">
         <img class="edit-icon" src="../../assets/img/icons/editIcon.svg" alt="icono de editar">
     </button>
-    <CustomModal :is-modal-open="isModalOpen" title="Editar" @on-close-modal="()=>isModalOpen=false">
+    <CustomModal :is-modal-open="isModalOpen" title="Editar" @on-close-modal="isModalOpen=false">
         <div>
             <p>Título de libro*</p>
             <input type="text" v-model="book.nom_lib">

@@ -10,7 +10,6 @@ function addActive(index) {
     }
     return `carousel-item ${active}`
 }
-
 </script>
 <template>
     <div id="carrusel" class="carousel slide" data-bs-ride="carousel">

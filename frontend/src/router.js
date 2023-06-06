@@ -13,27 +13,22 @@ const routes = [
   {
     path: "/login",
     name: "Login",
-    component: () => import("./views/Login.vue"),
+    component: () => import("./views/LoginView.vue"),
   },
   {
     path: "/boysbook",
     name: "BoysBook",
-    component: () => import("./views/BoysBook.vue"),
+    component: () => import("./views/BoysBookView.vue"),
   },
   {
     path: "/blogbook",
     name: "BlogBook",
-    component: () => import("./views/BlogBook.vue"),
+    component: () => import("./views/BlogBookView.vue"),
   },
   {
     path: "/whobook",
     name: "Whobook",
-    component: () => import("./views/WhoBook.vue"),
-  },
-  {
-    path: "/login",
-    name: "",
-    component: () => import("./components/common/AppBar.vue"),
+    component: () => import("./views/WhoBookView.vue"),
   },
   {
     path: "/admin",

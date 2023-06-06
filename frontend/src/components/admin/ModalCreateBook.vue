@@ -4,25 +4,14 @@ import {ref} from 'vue';
 //
 import CustomModal from '../common/CustomModal.vue';
 
-const isModalOpen = ref(false);
 const emit = defineEmits(['onCreate'])
-const titulo = ref("");
-const autor = ref("");
-const precio = ref("");
-const genero = ref("");
-const cantidad = ref("");
-const urlImagen = ref("");
 
-function hadleClickCreate() {
-    const book = {
-        nom_lib: titulo.value,
-        aut_lib: autor.value,
-        precio_lib: precio.value,
-        gen_lib: genero.value,
-        stock: cantidad.value,
-        imagen: urlImagen.value
-    }
-    emit('onCreate', book);
+const isModalOpen = ref(false);
+
+const book = ref({});
+
+function handleClickCreate() {
+    emit('onCreate', book.value);
     isModalOpen.value = false;
 }
 </script>
@@ -36,24 +25,22 @@ function hadleClickCreate() {
             <header>
                 <p>Para añadir, completa los espacios vacíos</p>
             </header>
-            <body>
             <p>Título de libro*</p>
-            <input type="text" v-model="titulo">
+            <input type="text" v-model="book.nom_lib">
             <p>Autor*</p>
-            <input type="text" v-model="autor">
+            <input type="text" v-model="book.aut_lib">
             <p>Precio*</p>
-            <input type="number" v-model="precio">
+            <input type="number" v-model="book.precio_lib">
             <p>Género*</p>
-            <input type="text" v-model="genero">
+            <input type="text" v-model="book.gen_lib">
             <p>Cantidad disponible</p>
-            <input type="number" v-model="cantidad">
+            <input type="number" v-model="book.stock">
             <p>Link de la portada del libro*</p>
-            <input type="url" v-model="urlImagen">
+            <input type="url" v-model="book.imagen">
             <footer>
                 <button @click="isModalOpen = false">cancel</button>
-                <button @click="hadleClickCreate">Añadir</button>
+                <button @click="handleClickCreate">Añadir</button>
             </footer>
-            </body>
         </div>
     </CustomModal>
 </template>
