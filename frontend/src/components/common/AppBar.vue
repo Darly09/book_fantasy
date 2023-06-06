@@ -4,7 +4,7 @@ import FieldSeach from './FieldSeach.vue';
 
 <template>
     <div>
-        <img class="logo" src="../../assets/img/logo.svg" alt="Logo" width="300">
+        <router-link to="/home" exact-active-class="active" ><img class="logo" src="../../assets/img/logo.svg" alt="Logo" width="300"></router-link>
         <FieldSeach />
         <div class="iconos">
             <router-link to="/login" exact-active-class="active" ><img src="../../assets/img/icons/usuario.svg" alt="usuario" width="35"></router-link>

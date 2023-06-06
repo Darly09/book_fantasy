@@ -26,11 +26,6 @@ const routes = [
     component: () => import("./views/blogbook.vue"),
   },
   {
-    path:"/whobook",
-    name:"whobook",
-    component: () => import("./views/blogbook.vue"),
-  },
-  {
     path:"/login",
     name:"",
     component: () => import("./components/common/AppBar.vue"),
