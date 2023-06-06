@@ -20,11 +20,6 @@
                 <input v-model="password" type="password" class="form-control" placeholder="Ingrese su contraseña"
                        id="Formpassword">
 
-                <div class="form-check">
-                    <label>¿Recordar usuario?</label>
-                    <input type="checkbox" value="">
-                </div>
-
                 <!--                <router-link to="/admin" exact-active-class="active">-->
                 <button type="submit" class="button">Ingresar</button>
                 <!--                </router-link>-->
@@ -46,7 +41,6 @@ import {login} from "../services/login.service.js";
 import CustomModal from "../components/common/CustomModal.vue";
 import router from "../router.js";
 
-const isLogin = ref([]);
 const message = ref("");
 const email = ref("");
 const password = ref("");
@@ -58,8 +52,8 @@ async function handleLogin() {
         if (loginResponse.code === 400) {
             isModalOpen.value = true;
             message.value = loginResponse.message;
-        }else {
-            await router.push("Admin")
+        } else {
+            await router.push({path: "admin", query: {name: loginResponse.username}})
         }
     } catch (e) {
         isModalOpen.value = true;
@@ -107,6 +101,11 @@ h2 {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+}
+
+.cabecera_correo, .cabecera_contraseña {
+    width: 60%;
+    margin-top: 2rem;
 }
 
 .text-form p {

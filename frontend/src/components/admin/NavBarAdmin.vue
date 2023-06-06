@@ -2,12 +2,16 @@
     <nav>
         <div class="contenedor_cabecera">
             <img class="logo_login" src="../../assets/img/icons/logo_footer.svg" alt="Logo login">
-            <button class="button_home"><strong>Home</strong></button>
+            <router-link to="home">
+                <button class="button_home"><strong>Home</strong></button>
+            </router-link>
         </div>
-        <div class="contenedor_salir">
-            <img class="salir" src="../../assets/img/icons/salir.svg" alt="Salir">
-            <p> <a href="#">Salir</a></p>
-        </div>
+        <router-link to="home">
+            <div class="contenedor_salir">
+                <img class="salir" src="../../assets/img/icons/salir.svg" alt="Salir">
+                <p> <a href="#">Salir</a></p>
+            </div>
+        </router-link>
     </nav>
 </template>
 
@@ -37,6 +41,10 @@ nav {
     width: 150px;
     left: 96px;
     top: 61px;
+}
+
+a{
+    text-decoration: none;
 }
 
 .button_home {
@@ -75,3 +83,5 @@ p a {
     text-decoration: none;
 }
 </style>
+<script setup>
+</script>

@@ -4,15 +4,17 @@ import ContentAdmin from '../components/admin/ContentAdmin.vue';
 import HeaderAdmin from '../components/admin/HeaderAdmin.vue';
 import NavBarAdmin from '../components/admin/NavBarAdmin.vue'
 import {createBook, deleteBookByCode, getAllBooks, updateBook} from '../services/book.services';
+import router from "../router.js";
 
-const name = "Mor"
+console.log(router.currentRoute.value.query)
+const name = router.currentRoute.value.query['name']
 const books = ref([]);
 
 onMounted(async () => {
     await getBooks()
 })
 
-async function getBooks(){
+async function getBooks() {
     books.value = await getAllBooks();
 }
 
