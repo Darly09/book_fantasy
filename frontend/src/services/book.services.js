@@ -57,3 +57,30 @@ export async function createBook({nom_lib, imagen, precio_lib,  aut_lib, gen_lib
   }  
 
 }
+
+export async function updateBook({codigo,nom_lib, imagen, precio_lib,  aut_lib, gen_lib, stock, }) {
+  console.log(codigo);
+  try {
+    const respuestaJson = await fetch(`${URL_BASE}/book/${codigo}`,{
+      method: "PUT",
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        nom_lib: nom_lib,
+        imagen: imagen,
+        precio_lib: precio_lib,
+        aut_lib: aut_lib,
+        gen_lib: gen_lib,
+        stock: stock
+      })
+    });
+    const respuesta = await respuestaJson.json()
+    //Si la respuesta llega con una propiedad error quiere decir que no se creó el libro 
+    return respuesta;
+
+  } catch (error) {
+    throw new Error("Falló el servidor a la hora de crear un nuevo libro.") 
+  }  
+
+}

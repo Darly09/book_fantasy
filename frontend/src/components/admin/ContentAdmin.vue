@@ -17,8 +17,8 @@
                 </div>
             </template>
 
-            <template #item-editar>
-                <img class="edit-icon" src="../../assets/img/icons/editIcon.svg" alt="icono de editar">
+            <template #item-editar="item">
+                <ModalUpdateBook :book="item" @on-update="$emit('onUpdate')"/>
             </template>
             <template #item-eliminar="item">
                 <ModalDeleteBook @on-delete="$event => $emit('onDelete', item.codigo)" />
@@ -31,9 +31,15 @@
 
 import BooksTable from 'vue3-easy-data-table';
 import ModalDeleteBook from '../admin/ModalDeleteBook.vue';
+import ModalUpdateBook from './ModalUpdateBook.vue';
 
 defineProps(['books'])
-defineEmits(['onDelete']);
+const emits = defineEmits(['onDelete', 'onUpdate']);
+
+async function handleClickUpdate(book){
+    emits('onUpdate', book)
+}
+
 const headers = [
     { text: "ID", value: "codigo" },
     { text: "Nombre", value: "nom_lib" },

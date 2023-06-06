@@ -13,10 +13,10 @@
 import ModalCreateBook from './ModalCreateBook.vue';
 
 defineProps(["nombre"])
-const emit = defineEmits(['onCreate']);
+const emits = defineEmits(['onCreate']);
 
 async function handleClickCreate(book){
-    emit('onCreate', book)
+    emits('onCreate', book)
 }
 </script>
 

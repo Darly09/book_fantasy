@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import ContentAdmin from '../components/admin/ContentAdmin.vue';
 import HeaderAdmin from '../components/admin/HeaderAdmin.vue';
 import NavBarAdmin from '../components/admin/NavBarAdmin.vue'
-import { getAllBooks, deleteBookByCode, createBook } from '../services/book.services';
+import { getAllBooks, deleteBookByCode, createBook, updateBook } from '../services/book.services';
 
 const name = "Mor"
 const books = ref([]);
@@ -25,8 +25,19 @@ async function handleCreate(book){
     }else{
         console.error(response.data.error);
     }
-
 }
+
+async function handleUpdate(book){
+    console.log(book);
+    const response = await updateBook(book)
+    if(response.code===200){
+        console.log(response);
+    }else{
+        console.error(response);
+    }
+}
+
+
 </script>
 
 <template>
@@ -34,7 +45,7 @@ async function handleCreate(book){
         <NavBarAdmin />
         <section class="content">
             <HeaderAdmin :nombre="name" @on-create="handleCreate"/>
-            <ContentAdmin :books="books" @on-delete="handleDelete"/>
+            <ContentAdmin :books="books" @on-delete="handleDelete" @on-update="handleUpdate"/>
         </section>
     </main>
 </template>
