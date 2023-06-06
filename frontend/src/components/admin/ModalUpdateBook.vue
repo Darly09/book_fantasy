@@ -1,6 +1,6 @@
 <script setup>
 //Importamos ref, porque nos vuelve una variable reactiva(que la variable espera que haya un cambio para reaccionar)
-import { ref } from 'vue';
+import {ref, watch} from 'vue';
 //
 import CustomModal from '../common/CustomModal.vue';
 
@@ -10,56 +10,39 @@ const emits = defineEmits(['onUpdate'])
 
 const props = defineProps(['book'])
 
-const book = props.book;
-console.log(book);
-const titulo = ref(book.nom_lib); 
-const autor = ref(book.aut_lib);
-const precio = ref(book.precio_lib);
-const genero = ref (book.gen_lib); 
-const cantidad = ref(book.stock); 
-const urlImagen = ref(book.imagen);
-
-
-function hadleClickUpdate(){
-    const bookUpdate = {
-        codigo:book.codigo,
-        nom_lib:titulo.value,
-        aut_lib:autor.value,
-        precio_lib:precio.value,
-        gen_lib:genero.value,
-        stock:cantidad.value,
-        imagen:urlImagen.value
-    }
-    console.log(bookUpdate);
-    emits('onUpdate', bookUpdate);
+const book = ref({});
+function handleClickUpdate() {
+    emits('onUpdate', {...book.value});
     isModalOpen.value = false;
 }
+
+watch(props, () => {
+    book.value = props.book;
+}, {immediate: true})
 </script>
- 
+
 <template>
     <button class="container_button" @click="isModalOpen = true">
         <img class="edit-icon" src="../../assets/img/icons/editIcon.svg" alt="icono de editar">
     </button>
-    <CustomModal :is-modal-open="isModalOpen" title="Editar" >
+    <CustomModal :is-modal-open="isModalOpen" title="Editar" @on-close-modal="()=>isModalOpen=false">
         <div>
-            <body>
-                <p>Título de libro*</p>
-                <input type="text" v-model="titulo">
-                <p>Autor*</p>
-                <input type="text" v-model="autor">
-                <p>Precio*</p>
-                <input type="number" v-model="precio">
-                <p>Género*</p>
-                <input type="text" v-model="genero">
-                <p>Cantidad disponible</p>
-                <input type="number" v-model="cantidad">
-                <p>Link de la portada del libro*</p>
-                <input type="url" v-model="urlImagen">
-                <footer>
+            <p>Título de libro*</p>
+            <input type="text" v-model="book.nom_lib">
+            <p>Autor*</p>
+            <input type="text" v-model="book.aut_lib">
+            <p>Precio*</p>
+            <input type="number" v-model="book.precio_lib">
+            <p>Género*</p>
+            <input type="text" v-model="book.gen_lib">
+            <p>Cantidad disponible</p>
+            <input type="number" v-model="book.stock">
+            <p>Link de la portada del libro*</p>
+            <input type="url" v-model="book.imagen">
+            <footer>
                 <button @click="isModalOpen = false">cancel</button>
-                <button @click="hadleClickUpdate">Guardar cambios</button>
-                </footer>
-            </body>
+                <button @click="handleClickUpdate">Guardar cambios</button>
+            </footer>
         </div>
     </CustomModal>
 </template>

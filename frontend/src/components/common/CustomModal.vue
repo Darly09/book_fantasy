@@ -1,5 +1,6 @@
 <script setup>
 defineProps(['isModalOpen', 'title'])
+defineEmits(['onCloseModal'])
 
 </script>
 
@@ -7,7 +8,7 @@ defineProps(['isModalOpen', 'title'])
     <Teleport to="#modal">
         <div class="modal-bg" v-if="isModalOpen">
             <div class="modal">
-                <button @click="isModalOpen = false" class="close-btn">x</button>
+                <button @click="$emit('onCloseModal')" class="close-btn">x</button>
                 <h2>{{ title }}</h2>
                 <slot></slot>
             </div>
@@ -16,7 +17,7 @@ defineProps(['isModalOpen', 'title'])
 </template>
 
 <style scoped>
-.modal-bg{
+.modal-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -29,7 +30,7 @@ defineProps(['isModalOpen', 'title'])
     z-index: 2;
 }
 
-.modal{
+.modal {
     position: relative;
     background: white;
     padding: 50px 100px;

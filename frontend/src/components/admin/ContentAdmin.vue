@@ -18,7 +18,7 @@
             </template>
 
             <template #item-editar="item">
-                <ModalUpdateBook :book="item" @on-update="$emit('onUpdate')"/>
+                <ModalUpdateBook :book="item" @on-update="handleClickUpdate"/>
             </template>
             <template #item-eliminar="item">
                 <ModalDeleteBook @on-delete="$event => $emit('onDelete', item.codigo)" />

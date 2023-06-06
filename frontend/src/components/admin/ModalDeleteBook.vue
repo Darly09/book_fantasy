@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineEmits } from 'vue';
+import {defineEmits, ref} from 'vue';
 import CustomModal from '../common/CustomModal.vue';
 
 const isModalOpen = ref(false);
@@ -14,10 +14,11 @@ function handleClickDelete() {
     <button class="container-button" @click="isModalOpen = true">
         <img class="delete-icon" src="../../assets/img/icons/deleteIcon.svg" alt="icono de eliminar">
     </button>
-    <CustomModal :is-modal-open="isModalOpen" title="Eliminar">
+    <CustomModal :is-modal-open="isModalOpen" title="Eliminar" @on-close-modal="()=>isModalOpen=false">
         <div>
             <img src="../../assets/img/icons/deleteIconModal.svg" alt="ELiminar">
-            <p>Si estás seguro/a de tu decisión y deseas continuar, ten en cuenta que una vez eliminado, no se podrá recuperar la información ni los datos asociados al libro.</p>
+            <p>Si estás seguro/a de tu decisión y deseas continuar, ten en cuenta que una vez eliminado, no se podrá
+                recuperar la información ni los datos asociados al libro.</p>
             <footer>
                 <!--variable reactiva para que cuando se de click, el modal se cierre -->
                 <button @click="isModalOpen = false">Cancel</button>
@@ -29,6 +30,6 @@ function handleClickDelete() {
 <style scoped>
 .container-button {
     background-color: transparent;
-    border: none;  
+    border: none;
 }
 </style>
