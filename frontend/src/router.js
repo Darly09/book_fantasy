@@ -23,7 +23,12 @@ const routes = [
   {
     path:"/blogbook",
     name:"BlogBook",
-    component: () => import("./views/BlogBook.vue"),
+    component: () => import("./views/blogbook.vue"),
+  },
+  {
+    path:"/login",
+    name:"",
+    component: () => import("./components/common/AppBar.vue"),
   },
   {
     path:"/whobook",
